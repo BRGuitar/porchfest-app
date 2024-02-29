@@ -1,9 +1,9 @@
 import '../globals.css';
 import { schedule } from '../../lib/sampleDB';
 export default function ScheduleCards() {
-  return schedule.map((item: any) => {
+  return schedule.map((item: any, index) => {
     return (
-      <tr>
+      <tr key={index}>
         <td className='border border-slate-700 bg-black px-4 py-1'>
           {item.Start} - {item.End}
         </td>
