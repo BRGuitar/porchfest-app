@@ -1,17 +1,26 @@
 import '../globals.css';
-import { schedule } from '../../lib/sampleDB';
-export default function ScheduleCards() {
+// import { schedule } from '../../lib/sampleDB';
+import { fetchSchedule } from '@/lib/data';
+
+export default async function ScheduleCards() {
+  const schedule = await fetchSchedule();
+
   return schedule.map((item: any, index) => {
     return (
       <tr key={index}>
         <td className='border border-slate-700 bg-black px-4 py-1'>
-          {item.Start} - {item.End}
+          <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row'>
+            <div>
+              {item.starttime.toLocaleTimeString().replace(':00', '')} -
+            </div>
+            <div>{item.endtime.toLocaleTimeString().replace(':00', '')}</div>
+          </div>
         </td>
         <td className='border border-slate-700 bg-black px-4 py-1'>
-          {item.Band}
+          {item.band}
         </td>
         <td className='border border-slate-700 bg-black px-4 py-1'>
-          {item.Location}
+          {item.location}
         </td>
       </tr>
       // <div
