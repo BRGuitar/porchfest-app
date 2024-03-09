@@ -8,13 +8,13 @@ export default function Schedule() {
       </div>
       <div className='max-h-48 overflow-auto rounded-3xl border-8 border-white bg-gradient-to-b from-sky-800 to-blue-950 sm:max-h-64 md:max-h-72 lg:max-h-[450px]'>
         <div className='flex flex-row justify-around'>
-          <table className='w-full table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-4'>
+          <table className='w-full table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-8 pb-4'>
             <caption className='caption-top pt-2 text-xl'>
               Saturday, June 8th
             </caption>
             <thead>
               <tr>
-                <th className='border border-slate-700 bg-white px-4 py-1 text-lg text-black'>
+                <th className='w-1/4 border border-slate-700 bg-white px-4 py-1 text-lg text-black'>
                   Time
                 </th>
                 <th className='border border-slate-700 bg-white px-4 py-1 text-lg text-black'>
