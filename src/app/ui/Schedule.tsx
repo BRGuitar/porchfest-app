@@ -1,8 +1,21 @@
 import '../globals.css';
 // import { schedule } from '../../lib/sampleDB';
 import { fetchSchedule } from '@/lib/data';
+import { sql } from '@vercel/postgres';
+import { redirect } from 'next/navigation';
+import DeleteButton from './DeleteButton';
+// import { Performance } from '@/lib/definitions';
 
-export default async function ScheduleCards() {
+async function deleteRow(id: string) {
+  'use server';
+
+  const row = await sql`
+    DELETE FROM schedule WHERE Id = ${id} RETURNING *;`;
+  console.log('deleted band ' + row.rows[0].band);
+  redirect(`/admin/schedule`);
+}
+
+export default async function ScheduleCards({ adminMode }) {
   const schedule = await fetchSchedule();
 
   return schedule.map((item: any, index) => {
@@ -22,6 +35,13 @@ export default async function ScheduleCards() {
         <td className='border border-slate-700 bg-black px-4 py-1'>
           {item.location}
         </td>
+        {adminMode ? (
+          <td>
+            <DeleteButton deleteFn={deleteRow} itemId={item.id} />
+          </td>
+        ) : (
+          <></>
+        )}
       </tr>
       // <div
       //   id='scheduleCard'

@@ -26,7 +26,7 @@ export default function Schedule() {
               </tr>
             </thead>
             <tbody>
-              <ScheduleCards />
+              <ScheduleCards adminMode={false} />
             </tbody>
           </table>
           {/* <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6'>

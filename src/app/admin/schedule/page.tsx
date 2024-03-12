@@ -37,7 +37,7 @@ export default function EditSchedule() {
             </tr>
           </thead>
           <tbody>
-            <ScheduleCards />
+            <ScheduleCards adminMode={true} />
           </tbody>
         </table>
       </div>

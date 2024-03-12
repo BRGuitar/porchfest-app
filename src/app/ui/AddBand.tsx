@@ -1,39 +1,42 @@
-'use client';
+// import { FormEvent } from 'react';
+// import { Performance } from '@/lib/definitions';
+import { sql } from '@vercel/postgres';
+import { redirect } from 'next/navigation';
 
-import { FormEvent } from 'react';
+async function create(formData: FormData) {
+  'use server';
+
+  const bandName = formData.get('Band');
+  const startTime = formData.get('Start');
+  const endTime = formData.get('End');
+  const location = formData.get('Location');
+
+  await sql`
+    INSERT INTO schedule (band, starttime, endtime, location) 
+    VALUES (${bandName?.toString()}, ${startTime?.toString()}, ${endTime?.toString()}, ${location?.toString()})`;
+
+  redirect(`/admin/schedule`);
+}
 
 export default function AddBandForm() {
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-
-    const newPerformance = {
-      Band: formData.get('Band'),
-      Start: formData.get('Start'),
-      End: formData.get('End'),
-      Location: formData.get('Location'),
-    };
-    // const response = await fetch('/api/submit', {
-    //   method: 'POST',
-    //   body: formData,
-    // })
-
-    // Handle response if necessary
-    // const data = await response.json()
-    // ...
-  }
-
   return (
-    <form onSubmit={onSubmit}>
+    <form action={create}>
       <div className='flex flex-row justify-around'>
         <div className='flex flex-col'>
           <span>Start Time</span>
-          <input className='m-1 p-1 text-black' type='text' name='Start' />
+          <input
+            className='m-1 p-1 text-black'
+            type='datetime-local'
+            name='Start'
+          />
         </div>
         <div className='flex flex-col'>
           <span>End Time</span>
-          <input className='m-1 p-1 text-black' type='text' name='End' />
+          <input
+            className='m-1 p-1 text-black'
+            type='datetime-local'
+            name='End'
+          />
         </div>
         <div className='flex flex-col'>
           <span>Band</span>
