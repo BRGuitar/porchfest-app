@@ -14,12 +14,12 @@ export default function Admin() {
         >
           Edit Schedule
         </Link>
-        <Link
+        {/* <Link
           href='/admin/schedule'
           className='m-2 rounded-lg bg-white px-2 py-1 text-black hover:bg-black hover:text-white'
         >
           Edit Band Bios
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

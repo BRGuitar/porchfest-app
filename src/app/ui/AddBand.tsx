@@ -1,7 +1,8 @@
 // import { FormEvent } from 'react';
-// import { Performance } from '@/lib/definitions';
+import { Performance } from '@/lib/definitions';
 import { sql } from '@vercel/postgres';
 import { redirect } from 'next/navigation';
+import { addToSchedule } from '@/lib/data';
 
 async function create(formData: FormData) {
   'use server';
@@ -10,6 +11,17 @@ async function create(formData: FormData) {
   const startTime = formData.get('Start');
   const endTime = formData.get('End');
   const location = formData.get('Location');
+
+  // See if we can use the Function from Data file instead. Abstraction!
+
+  // const newPerf: Performance  = {
+  //   band: bandName?.toString(),
+  //   starttime: startTime,
+  //   endtime: endTime,
+  //   location: location
+  // }
+
+  // await addToSchedule();
 
   await sql`
     INSERT INTO schedule (band, starttime, endtime, location) 

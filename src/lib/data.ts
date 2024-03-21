@@ -7,16 +7,29 @@ export async function fetchSchedule() {
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
   noStore();
   try {
-    // Artificially delay a response for demo purposes.
-    // Don't do this in production :)
-
     console.log('Fetching Schedule data...');
 
-    const data = await sql<Performance>`SELECT * FROM schedule`;
+    const data =
+      await sql<Performance>`SELECT * FROM schedule ORDER BY starttime ASC`;
 
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Schedule data.');
+  }
+}
+
+export async function addToSchedule(newPerformance: Performance) {
+  'use server';
+
+  // Add Data Validation
+
+  try {
+    await sql`
+    INSERT INTO schedule (band, starttime, endtime, location) 
+    VALUES (${newPerformance.band.toString()}, ${newPerformance.starttime.toString()}, ${newPerformance.endtime.toString()}, ${newPerformance.location.toString()})`;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to add to Schedule.');
   }
 }

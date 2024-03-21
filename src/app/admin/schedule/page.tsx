@@ -2,26 +2,28 @@ import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import ScheduleCards from '@/app/ui/Schedule';
 import AddBandForm from '@/app/ui/AddBand';
+import { fetchSchedule } from '@/lib/data';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
-export default function EditSchedule() {
+export default async function EditSchedule() {
+  const schedule = await fetchSchedule();
   return (
     <div className={montserrat.className + ' flex flex-col p-6'}>
       <div className='flex flex-col'>
         <div className='flex flex-row pb-6'>
-          <button className='m-2 rounded-lg bg-white px-2 py-1 text-black hover:bg-black hover:text-white'>
-            Add a Band
-          </button>
-          <button className='m-2 rounded-lg bg-white px-2 py-1 text-black hover:bg-black hover:text-white'>
-            Delete a Band
-          </button>
+          <Link
+            href='/admin'
+            className='m-2 rounded-lg bg-white px-2 py-1 text-black hover:bg-black hover:text-white'
+          >
+            Back
+          </Link>
         </div>
         <div className='border-2 border-white p-4'>
-          <span className='text-lg'>Add a Band</span>
+          <h2 className='mb-4 text-lg'>Add a Band</h2>
           <AddBandForm />
         </div>
-        <span>Current Schedule:</span>
+        <h4 className='pt-6'>Current Schedule:</h4>
         <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6'>
           <thead>
             <tr>
@@ -37,7 +39,7 @@ export default function EditSchedule() {
             </tr>
           </thead>
           <tbody>
-            <ScheduleCards adminMode={true} />
+            <ScheduleCards adminMode={true} schedule={schedule} />
           </tbody>
         </table>
       </div>

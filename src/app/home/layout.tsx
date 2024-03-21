@@ -7,6 +7,7 @@ import facebook from '../../../public/Facebook.png';
 import '../globals.css';
 import Image from 'next/image';
 import NavBar from '@/app/ui/NavBar';
+import Link from 'next/link';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
@@ -67,7 +68,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
             <div className='flex h-2 bg-white'></div>
-            <div className='flex min-h-36 bg-blue-950'></div>
+            <div className='flex min-h-36 flex-col items-center justify-center bg-blue-950'>
+              <h5>Bowling Green, Ohio</h5>
+              <h5>porchfest@gmail.com | 419 575 1234</h5>
+              <Link href='/admin'>Admin Page</Link>
+            </div>
           </div>
           <div className='flex h-full items-center justify-center'>
             {children}
