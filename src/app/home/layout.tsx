@@ -59,12 +59,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className='py-2 text-center md:pb-4 md:text-lg lg:pb-4 lg:text-2xl'>
                   Follow us for the Latest News!
                 </span>
-                <Image
-                  src={facebook}
-                  className='max-h-80 w-5/6 max-w-80 rounded-3xl'
-                  quality={100}
-                  alt='Local Talent featured at PorchFest'
-                />
+                <a href='https://www.facebook.com/BGPorchFest' target='_blank'>
+                  <Image
+                    src={facebook}
+                    className='m-auto max-h-80 w-5/6 max-w-80 rounded-3xl'
+                    quality={100}
+                    alt='Local Talent featured at PorchFest'
+                  />
+                </a>
               </div>
             </div>
             <div className='flex h-2 bg-white'></div>
