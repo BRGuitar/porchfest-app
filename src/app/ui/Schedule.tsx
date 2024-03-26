@@ -23,7 +23,7 @@ export default async function ScheduleCards({ adminMode, schedule }) {
   return schedule.map((item: any, index) => {
     return (
       <tr key={index}>
-        <td className='rounded-l-xl bg-white px-3 py-2 text-black lg:text-base'>
+        <td className='rounded-l-xl bg-white px-3 py-2 text-blue-950 lg:text-base'>
           <div className='flex flex-col md:flex-row lg:flex-row'>
             <div className=''>
               {item.starttime.toLocaleTimeString().replace(':00', '') + '-'}
@@ -34,10 +34,10 @@ export default async function ScheduleCards({ adminMode, schedule }) {
             </div>
           </div>
         </td>
-        <td className='border-b-2 border-white bg-blue-900 px-4 py-2 lg:text-xl'>
+        <td className='border-b-2 border-white bg-sky-950 px-4 py-2 lg:text-xl'>
           {item.band}
         </td>
-        <td className='rounded-r-md border-b-2 border-white bg-blue-900 px-4 py-2 text-right md:text-sm lg:text-base'>
+        <td className='rounded-r-md border-b-2 border-white bg-sky-950 px-4 py-2 text-right md:text-sm lg:text-base'>
           {item.location}
         </td>
         {adminMode ? (

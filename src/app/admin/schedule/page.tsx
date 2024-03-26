@@ -25,19 +25,6 @@ export default async function EditSchedule() {
         </div>
         <h4 className='pt-6'>Current Schedule:</h4>
         <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6'>
-          <thead>
-            <tr>
-              <th className='border border-slate-700 bg-black px-4 py-1'>
-                Time
-              </th>
-              <th className='border border-slate-700 bg-black px-4 py-1'>
-                Band
-              </th>
-              <th className='border border-slate-700 bg-black px-4 py-1'>
-                Location
-              </th>
-            </tr>
-          </thead>
           <tbody>
             <ScheduleCards adminMode={true} schedule={schedule} />
           </tbody>

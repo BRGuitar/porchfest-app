@@ -4,7 +4,7 @@ const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className={bebas.className + ' p-8'}>
-      <span className='w-screen text-5xl'>Welcome Admin.</span>
+      <span className='w-screen text-5xl'>Admin Page</span>
       <span>{children}</span>
     </main>
   );

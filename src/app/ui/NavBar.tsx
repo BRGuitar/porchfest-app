@@ -32,7 +32,7 @@ export default function NavBar() {
   return (
     <div
       id='topNavBar'
-      className='md:h-34 flex flex-row items-end justify-around bg-gradient-to-b from-sky-500 to-blue-950 pb-1 lg:h-36 lg:pb-2'
+      className='md:h-34 flex flex-row items-end justify-around bg-gradient-to-b from-sky-600 to-sky-950 pb-1 lg:h-36 lg:pb-2'
     >
       <Link href='/home' className={linkStyle('/home')}>
         Home

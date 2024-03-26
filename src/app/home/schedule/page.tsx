@@ -10,8 +10,8 @@ export default async function Schedule() {
       </div> */}
       {/* <div className='max-h-48 overflow-auto rounded-3xl border-8 border-white bg-gradient-to-b from-sky-800 to-blue-950 sm:max-h-64 md:max-h-72 lg:max-h-[450px]'> */}
       {/* <div className='max-h-48 overflow-auto rounded-3xl bg-slate-500 sm:max-h-64 md:max-h-72 lg:max-h-[450px]'> */}
-      <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-orange-500 sm:max-h-64 md:max-h-[400px] lg:max-h-[590px]'>
-        <h4 className='mx-5 my-2 border-b-4 border-white pt-2 text-3xl text-white'>
+      <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-neutral-200 sm:max-h-64 md:max-h-[400px] lg:max-h-[590px]'>
+        <h4 className='mx-4 mb-1 mt-4 rounded-t-xl border-b-4 border-orange-500 bg-orange-500 pt-2 text-center text-3xl text-white'>
           Saturday, June 8th
         </h4>
         <div className='flex flex-row justify-center'>

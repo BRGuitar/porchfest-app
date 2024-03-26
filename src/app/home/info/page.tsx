@@ -10,14 +10,17 @@ export default function Info() {
       {/* <div className='pb-1 text-3xl drop-shadow-[3.0px_3.0px_rgba(23,37,84)] md:text-4xl lg:text-5xl'>
         More Info
       </div> */}
-      <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-orange-500 sm:max-h-64 md:max-h-[400px] lg:max-h-[590px]'>
+      <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-neutral-100 sm:max-h-64 md:max-h-[400px] lg:max-h-[590px]'>
         <h4
-          className={lilita.className + ' mx-5 my-2 pt-2 text-4xl text-white'}
+          className={
+            lilita.className +
+            ' mx-4 mt-4 rounded-t-xl bg-orange-500 p-2 text-center text-4xl text-white'
+          }
         >
           What is PorchFest?
         </h4>
-        <div className='mx-10 mb-6 rounded-2xl bg-blue-900'>
-          <div className='mx-4 my-2 rounded-xl px-4 py-4 text-center text-lg'>
+        <div className='mx-4 mb-4 rounded-b-2xl bg-sky-950'>
+          <div className='mx-4 my-2 px-4 py-4 text-center text-lg'>
             PorchFest is a local Music Festival held each year in Bowling Green,
             Ohio. We feature a wide variety of musical acts from all over the
             Northwest Ohio area. The festival is held in a quarter-mile radius

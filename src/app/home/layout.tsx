@@ -57,21 +57,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
               <div className='flex h-full w-1/3 flex-grow flex-col items-center bg-blue-500 p-4'>
                 <span className='py-2 text-center md:pb-4 md:text-lg lg:pb-4 lg:text-2xl'>
-                  Follow us for the Latest News!
+                  Follow for the Latest News!
                 </span>
                 <a href='https://www.facebook.com/BGPorchFest' target='_blank'>
                   <Image
                     src={facebook}
-                    className='m-auto max-h-80 w-5/6 max-w-80 rounded-3xl'
+                    className='m-auto max-h-80 w-11/12 max-w-80 rounded-3xl'
                     quality={100}
-                    alt='Local Talent featured at PorchFest'
+                    alt='PorchFest Facebook Screenshot'
                   />
                 </a>
               </div>
             </div>
             <div className='flex h-2 bg-white'></div>
-            <div className='flex min-h-36 flex-col items-center justify-center bg-blue-950'>
-              <h5>Bowling Green, Ohio</h5>
+            <div className='flex min-h-36 flex-col items-center justify-center bg-sky-950'>
+              <h5>Questions? Contact Us!</h5>
               <h5>porchfest@gmail.com | 419 575 1234</h5>
               <Link href='/admin'>Admin Page</Link>
             </div>
