@@ -19,11 +19,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className='flex h-fit flex-col'>
         <div>
           <div className='absolute -z-10'>
+            <div className='bg-base-orange flex h-1'></div>
             <div className='flex h-1 bg-white'></div>
             <Image
               src={bgBackgroundImg}
               placeholder='blur'
-              className='w-screen'
+              className='w-screen opacity-75'
               quality={100}
               alt='Background Image of Bowling Green, Ohio'
             />
@@ -33,9 +34,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 lilita.className + ' flex h-56 flex-row sm:h-60 md:h-80 lg:h-96'
               }
             >
-              <div className='flex h-full w-1/3 flex-col items-center justify-start bg-orange-500 p-4'>
-                <span className='py-2 text-center md:text-lg lg:text-2xl'>
-                  Amazing Local Talent
+              <Link
+                href='/home/about'
+                className='bg-base-orange flex h-full w-1/3 flex-col items-center justify-start p-4'
+              >
+                <span className='py-2 text-center text-white drop-shadow-[2.0px_2.0px_rgba(10,67,88)] md:text-lg lg:text-2xl'>
+                  Discover Amazing Local Talent
                 </span>
                 <Image
                   src={localTalent}
@@ -43,34 +47,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   quality={100}
                   alt='Local Talent featured at PorchFest'
                 />
+              </Link>
+              <div className='bg-dark-blue flex h-full w-1/3 flex-col items-center justify-start border-x-8 border-white p-4'>
+                <span className='py-2 text-center text-white drop-shadow-[2.0px_2.0px_rgba(10,67,88)] md:text-lg lg:text-2xl'>
+                  Thank You to our Sponsors!
+                </span>
+                <span className='flex flex-col items-center pt-4'>
+                  <span className='decoration-base-orange p-2 text-center text-3xl text-white underline'>
+                    Arlyn's Good Beer
+                  </span>
+                  <span className='decoration-base-orange p-2 text-center text-3xl text-white underline'>
+                    Other Sponsors Here ...
+                  </span>
+                </span>
               </div>
-              <div className='flex h-full w-1/3 flex-col items-center justify-start border-x-2 border-white bg-gray-400 p-4'>
-                <span className='py-2 text-center md:text-lg lg:text-2xl'>
-                  Great Atmosphere
+              <Link
+                href='https://www.facebook.com/BGPorchFest'
+                target='_blank'
+                className='bg-base-orange flex h-full w-1/3 flex-grow flex-col items-center p-4'
+              >
+                <span className='py-2 text-center text-white drop-shadow-[2.0px_2.0px_rgba(10,67,88)] md:pb-2 md:text-lg lg:pb-2 lg:text-2xl'>
+                  Follow Us for the Latest News
                 </span>
                 <Image
-                  src={crowdPicture}
-                  className='max-h-80 w-5/6 max-w-80'
+                  src={facebook}
+                  className='m-auto max-h-80 w-5/6 max-w-80 rounded-3xl'
                   quality={100}
-                  alt='Crowd enjoying Porch Fest'
+                  alt='PorchFest Facebook Screenshot'
                 />
-              </div>
-              <div className='flex h-full w-1/3 flex-grow flex-col items-center bg-blue-500 p-4'>
-                <span className='py-2 text-center md:pb-4 md:text-lg lg:pb-4 lg:text-2xl'>
-                  Follow for the Latest News!
-                </span>
-                <a href='https://www.facebook.com/BGPorchFest' target='_blank'>
-                  <Image
-                    src={facebook}
-                    className='m-auto max-h-80 w-11/12 max-w-80 rounded-3xl'
-                    quality={100}
-                    alt='PorchFest Facebook Screenshot'
-                  />
-                </a>
-              </div>
+                {/* </a> */}
+              </Link>
             </div>
             <div className='flex h-2 bg-white'></div>
-            <div className='flex min-h-36 flex-col items-center justify-center bg-sky-950'>
+            <div className='bg-dark-blue flex min-h-36 flex-col items-center justify-center text-white'>
               <h5>Questions? Contact Us!</h5>
               <h5>porchfest@gmail.com | 419 575 1234</h5>
               <Link href='/admin'>Admin Page</Link>

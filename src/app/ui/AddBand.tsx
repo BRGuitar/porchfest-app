@@ -2,7 +2,6 @@
 import { Performance } from '@/lib/definitions';
 import { sql } from '@vercel/postgres';
 import { redirect } from 'next/navigation';
-import { addToSchedule } from '@/lib/data';
 
 async function create(formData: FormData) {
   'use server';

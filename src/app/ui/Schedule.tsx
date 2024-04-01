@@ -1,10 +1,10 @@
 import '../globals.css';
 
-import { fetchSchedule } from '@/lib/data';
 import { sql } from '@vercel/postgres';
 import { redirect } from 'next/navigation';
 import DeleteButton from './DeleteButton';
 import { Montserrat } from 'next/font/google';
+import Link from 'next/link';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
@@ -18,12 +18,10 @@ async function deleteRow(id: string) {
 }
 
 export default async function ScheduleCards({ adminMode, schedule }) {
-  //const schedule = await fetchSchedule();
-
   return schedule.map((item: any, index) => {
     return (
       <tr key={index}>
-        <td className='rounded-l-xl bg-white px-3 py-2 text-blue-950 lg:text-base'>
+        <td className='rounded-l-xl bg-white px-3 py-2 text-black lg:text-base'>
           <div className='flex flex-col md:flex-row lg:flex-row'>
             <div className=''>
               {item.starttime.toLocaleTimeString().replace(':00', '') + '-'}
@@ -34,10 +32,19 @@ export default async function ScheduleCards({ adminMode, schedule }) {
             </div>
           </div>
         </td>
-        <td className='border-b-2 border-white bg-sky-950 px-4 py-2 lg:text-xl'>
-          {item.band}
+        <td className='bg-dark-blue border-b-2 border-white px-4 py-2 text-white lg:text-xl'>
+          {item.pagelink !== null ? (
+            <Link
+              className='hover:decoration-base-orange hover:text-white hover:underline'
+              href={'/home/about/' + item.pagelink}
+            >
+              {item.band}
+            </Link>
+          ) : (
+            <span>{item.band}</span>
+          )}
         </td>
-        <td className='rounded-r-md border-b-2 border-white bg-sky-950 px-4 py-2 text-right md:text-sm lg:text-base'>
+        <td className='bg-dark-blue rounded-r-md border-b-2 border-white px-4 py-2 text-right text-white md:text-sm lg:text-base'>
           {item.location}
         </td>
         {adminMode ? (

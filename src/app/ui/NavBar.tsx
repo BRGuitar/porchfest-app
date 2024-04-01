@@ -24,17 +24,17 @@ export default function NavBar() {
   const pathname = usePathname();
   const linkStyle = (linkName: string) =>
     clsx(
-      'text-xs rounded-lg px-2 md:px-3 lg:px-6 pt-1 hover:bg-white hover:text-blue-900 md:text-lg lg:text-xl',
+      'text-xs rounded-lg px-2 md:px-3 lg:px-6 pt-1 hover:bg-white hover:text-black md:text-lg lg:text-xl',
       {
-        'bg-white text-blue-900': pathname === linkName,
+        'bg-white text-black': pathname.match(linkName),
       }
     );
   return (
     <div
       id='topNavBar'
-      className='md:h-34 flex flex-row items-end justify-around bg-gradient-to-b from-sky-600 to-sky-950 pb-1 lg:h-36 lg:pb-2'
+      className='md:h-34 bg-dark-blue flex flex-row items-end justify-around py-1 text-white lg:h-36 lg:pb-2'
     >
-      <Link href='/home' className={linkStyle('/home')}>
+      <Link href='/home' className={linkStyle('/home$')}>
         Home
       </Link>
 
@@ -44,14 +44,14 @@ export default function NavBar() {
       <div id='logoContainer' className='flex flex-row items-center'>
         <Image
           src={porchfestLogo}
-          className='h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32'
+          className='h-20 w-20 pt-1 md:h-28 md:w-28 lg:h-32 lg:w-32'
           alt='porchfest logo'
         ></Image>
         <div
           id='headerTitle'
           className={
             lilita.className +
-            ' flex flex-col items-center justify-around py-4 pl-2'
+            ' flex flex-col items-center justify-around py-4 pl-2 text-white'
           }
         >
           <span className='text-lg md:text-2xl lg:text-4xl'>

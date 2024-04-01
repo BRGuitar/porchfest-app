@@ -14,12 +14,12 @@ export default function Info() {
         <h4
           className={
             lilita.className +
-            ' mx-4 mt-4 rounded-t-xl bg-orange-500 p-2 text-center text-4xl text-white'
+            ' bg-base-orange mx-4 mt-4 rounded-t-xl p-2 text-center text-4xl text-white'
           }
         >
           What is PorchFest?
         </h4>
-        <div className='mx-4 mb-4 rounded-b-2xl bg-sky-950'>
+        <div className='bg-dark-blue mx-4 mb-4 rounded-b-2xl text-white'>
           <div className='mx-4 my-2 px-4 py-4 text-center text-lg'>
             PorchFest is a local Music Festival held each year in Bowling Green,
             Ohio. We feature a wide variety of musical acts from all over the

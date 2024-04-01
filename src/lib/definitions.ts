@@ -4,11 +4,14 @@ export type Performance = {
   starttime: Date;
   endtime: Date;
   location: string;
+  pagelink: string;
 };
 
 export type Band = {
   id: Number;
   name: string;
-  bio: string;
   imglink: string;
+  pagelink: string;
+  bio1: string;
+  bio2: string;
 };
