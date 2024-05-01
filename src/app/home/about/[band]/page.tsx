@@ -19,25 +19,25 @@ export default async function JollyGabbers({
 
   if (foundBand) {
     return (
-      <main className={montserrat.className + ' w-3/4 pt-6 md:pt-8 lg:pt-12'}>
+      <main className={montserrat.className + ' w-3/4 pt-12'}>
         <Link
           href='/home/about'
-          className='bg-dark-blue hover:text-dark-blue ml-6 rounded-md px-2 py-1 text-sm text-white hover:bg-white'
+          className='ml-6 rounded-md bg-dark-blue px-2 py-1 text-sm text-white hover:bg-white hover:text-dark-blue'
         >
           RETURN TO BAND LIST
         </Link>
-        <div className='mx-2 mt-1 max-h-48 overflow-auto rounded-3xl bg-neutral-100 pb-4 sm:max-h-96 md:max-h-[400px] lg:max-h-[590px]'>
+        <div className='mx-2 mt-1 max-h-[590px] overflow-auto rounded-3xl bg-neutral-100 pb-4'>
           <div
             className={
               bebas.className +
-              ' bg-base-orange mx-4 mb-2 mt-4 flex flex-col items-start rounded-t-2xl p-2 text-2xl md:text-3xl lg:text-4xl'
+              ' mx-4 mb-2 mt-4 flex flex-col items-start rounded-t-2xl bg-base-orange p-2 text-4xl'
             }
           >
             <h4 className='w-full text-center text-white'>
               {bandData[0].name}
             </h4>
           </div>
-          <div className='bg-dark-blue mx-4 flex flex-col items-center justify-around rounded-b-xl'>
+          <div className='mx-4 flex flex-col items-center justify-around rounded-b-xl bg-dark-blue'>
             <div className='w-1/2 pt-4'>
               {/* <Image
                 src={jollyGabbers}
@@ -50,7 +50,7 @@ export default async function JollyGabbers({
                 altDesc={bandData[0].name + ' band photo'}
               />
             </div>
-            <div className='m-2 flex w-5/6 flex-col text-center text-xs text-white md:text-sm lg:text-base'>
+            <div className='m-2 flex w-5/6 flex-col text-center text-base text-white'>
               <span className='py-1'>{bandData[0].bio1}</span>
               <span className='py-1'>{bandData[0].bio2}</span>
             </div>
@@ -60,21 +60,21 @@ export default async function JollyGabbers({
     );
   } else {
     return (
-      <main className={montserrat.className + ' w-3/4 pt-6 md:pt-8 lg:pt-12'}>
-        <Link href='/home/about' className='text-dark-blue pl-6 text-sm'>
+      <main className={montserrat.className + ' w-3/4 pt-12'}>
+        <Link href='/home/about' className='pl-6 text-sm text-dark-blue'>
           RETURN TO BAND LIST
         </Link>
-        <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-neutral-100 pb-4 sm:max-h-96 md:max-h-[400px] lg:max-h-[590px]'>
+        <div className='mx-2 max-h-[590px] overflow-auto rounded-3xl bg-neutral-100 pb-4'>
           <div
             className={
               bebas.className +
-              ' bg-base-orange mx-4 mb-2 mt-4 flex flex-col items-start rounded-t-2xl p-2 text-2xl md:text-3xl lg:text-4xl'
+              ' mx-4 mb-2 mt-4 flex flex-col items-start rounded-t-2xl bg-base-orange p-2 text-4xl'
             }
           >
             <h4 className='w-full text-center text-white'>Band Not Found</h4>
           </div>
-          <div className='bg-dark-blue mx-4 flex flex-col items-center justify-around rounded-b-xl'>
-            <div className='m-2 flex w-5/6 flex-col text-center text-xs text-white md:text-sm lg:text-base'>
+          <div className='mx-4 flex flex-col items-center justify-around rounded-b-xl bg-dark-blue'>
+            <div className='m-2 flex w-5/6 flex-col text-center text-base text-white'>
               <span className='py-1'>
                 Please Return to Band List and select another Band.
               </span>

@@ -21,8 +21,8 @@ export default async function ScheduleCards({ adminMode, schedule }) {
   return schedule.map((item: any, index) => {
     return (
       <tr key={index}>
-        <td className='rounded-l-xl bg-white px-3 py-2 text-black lg:text-base'>
-          <div className='flex flex-col md:flex-row lg:flex-row'>
+        <td className='rounded-l-xl bg-white px-3 py-2 text-base text-black'>
+          <div className='flex flex-row'>
             <div className=''>
               {item.starttime.toLocaleTimeString().replace(':00', '') + '-'}
             </div>
@@ -32,10 +32,10 @@ export default async function ScheduleCards({ adminMode, schedule }) {
             </div>
           </div>
         </td>
-        <td className='bg-dark-blue border-b-2 border-white px-4 py-2 text-white lg:text-xl'>
+        <td className='border-b-2 border-white bg-dark-blue px-4 py-2 text-xl text-white'>
           {item.pagelink !== null ? (
             <Link
-              className='hover:decoration-base-orange hover:text-white hover:underline'
+              className='hover:text-white hover:underline hover:decoration-base-orange'
               href={'/home/about/' + item.pagelink}
             >
               {item.band}
@@ -44,7 +44,7 @@ export default async function ScheduleCards({ adminMode, schedule }) {
             <span>{item.band}</span>
           )}
         </td>
-        <td className='bg-dark-blue rounded-r-md border-b-2 border-white px-4 py-2 text-right text-white md:text-sm lg:text-base'>
+        <td className='rounded-r-md border-b-2 border-white bg-dark-blue px-4 py-2 text-right text-base text-white'>
           {item.location}
         </td>
         {adminMode ? (

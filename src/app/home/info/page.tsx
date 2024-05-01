@@ -6,20 +6,20 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function Info() {
   return (
-    <main className={montserrat.className + ' w-3/4 pt-6 md:pt-8 lg:pt-12'}>
+    <main className={montserrat.className + ' w-3/4 pt-12'}>
       {/* <div className='pb-1 text-3xl drop-shadow-[3.0px_3.0px_rgba(23,37,84)] md:text-4xl lg:text-5xl'>
         More Info
       </div> */}
-      <div className='mx-2 max-h-48 overflow-auto rounded-3xl bg-neutral-100 sm:max-h-64 md:max-h-[400px] lg:max-h-[590px]'>
+      <div className='mx-2 max-h-[590px] overflow-auto rounded-3xl bg-neutral-100'>
         <h4
           className={
             lilita.className +
-            ' bg-base-orange mx-4 mt-4 rounded-t-xl p-2 text-center text-4xl text-white'
+            ' mx-4 mt-4 rounded-t-xl bg-base-orange p-2 text-center text-4xl text-white'
           }
         >
           What is PorchFest?
         </h4>
-        <div className='bg-dark-blue mx-4 mb-4 rounded-b-2xl text-white'>
+        <div className='mx-4 mb-4 rounded-b-2xl bg-dark-blue text-white'>
           <div className='mx-4 my-2 px-4 py-4 text-center text-lg'>
             PorchFest is a local Music Festival held each year in Bowling Green,
             Ohio. We feature a wide variety of musical acts from all over the

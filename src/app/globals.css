@@ -19,6 +19,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #0a4358;
+  min-width: 1080px;
   /* background: linear-gradient(
       to bottom,
       transparent,

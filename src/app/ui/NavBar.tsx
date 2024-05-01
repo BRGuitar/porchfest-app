@@ -23,16 +23,13 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function NavBar() {
   const pathname = usePathname();
   const linkStyle = (linkName: string) =>
-    clsx(
-      'text-xs rounded-lg px-2 md:px-3 lg:px-6 pt-1 hover:bg-white hover:text-black md:text-lg lg:text-xl',
-      {
-        'bg-white text-black': pathname.match(linkName),
-      }
-    );
+    clsx('text-xl rounded-lg px-6 pt-1 hover:bg-white hover:text-black', {
+      'bg-white text-black': pathname.match(linkName),
+    });
   return (
     <div
       id='topNavBar'
-      className='md:h-34 bg-dark-blue flex flex-row items-end justify-around py-1 text-white lg:h-36 lg:pb-2'
+      className='flex h-36 flex-row items-end justify-around bg-dark-blue py-1 pb-2 text-white'
     >
       <Link href='/home' className={linkStyle('/home$')}>
         Home
@@ -44,7 +41,7 @@ export default function NavBar() {
       <div id='logoContainer' className='flex flex-row items-center'>
         <Image
           src={porchfestLogo}
-          className='h-20 w-20 pt-1 md:h-28 md:w-28 lg:h-32 lg:w-32'
+          className='h-32 w-32 pt-1'
           alt='porchfest logo'
         ></Image>
         <div
@@ -54,14 +51,13 @@ export default function NavBar() {
             ' flex flex-col items-center justify-around py-4 pl-2 text-white'
           }
         >
-          <span className='text-lg md:text-2xl lg:text-4xl'>
-            Live Music Festival
-          </span>
-          <span className='text-xs md:text-lg lg:text-2xl'>
-            &mdash; BOWLING GREEN, OH &mdash;
-          </span>
-          <span className='text-xs md:text-lg lg:text-2xl'>
-            Coming to a Porch near you.
+          <span className='text-4xl'>Live Music Festival</span>
+          {/* <span className='text-xs md:text-lg lg:text-2xl'>
+            BOWLING GREEN, OHIO
+          </span> */}
+          <span className='text-2xl'>&mdash; BOWLING GREEN, OH &mdash;</span>
+          <span className='text-2xl'>
+            EBERLY &middot; HANKEY &middot; GORRELL
           </span>
         </div>
       </div>
