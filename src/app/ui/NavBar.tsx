@@ -52,13 +52,8 @@ export default function NavBar() {
           }
         >
           <span className='text-4xl'>Live Music Festival</span>
-          {/* <span className='text-xs md:text-lg lg:text-2xl'>
-            BOWLING GREEN, OHIO
-          </span> */}
           <span className='text-2xl'>&mdash; BOWLING GREEN, OH &mdash;</span>
-          <span className='text-2xl'>
-            EBERLY &middot; HANKEY &middot; GORRELL
-          </span>
+          <span className='text-2xl'>On & Around Eberly Avenue</span>
         </div>
       </div>
       <Link href='/home/info' className={linkStyle('/home/info')}>
