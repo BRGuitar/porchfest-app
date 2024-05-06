@@ -31,19 +31,23 @@ export default function NavBar() {
       id='topNavBar'
       className='flex h-36 flex-row items-end justify-around bg-dark-blue py-1 pb-2 text-white'
     >
-      <Link href='/home' className={linkStyle('/home$')}>
+      {/* <Link href='/home' className={linkStyle('/home$')}>
         Home
-      </Link>
-
+      </Link> */}
       <Link href='/home/schedule' className={linkStyle('/home/schedule')}>
         2024 Schedule
       </Link>
+      <Link href='/home/map' className={linkStyle('/home/map')}>
+        PorchFest Map
+      </Link>
       <div id='logoContainer' className='flex flex-row items-center'>
-        <Image
-          src={porchfestLogo}
-          className='h-32 w-32 pt-1'
-          alt='porchfest logo'
-        ></Image>
+        <Link href='/home'>
+          <Image
+            src={porchfestLogo}
+            className='h-32 w-32 pt-1'
+            alt='porchfest logo'
+          ></Image>
+        </Link>
         <div
           id='headerTitle'
           className={

@@ -1,8 +1,5 @@
-import type { Metadata } from 'next';
 import { Bebas_Neue, Lilita_One } from 'next/font/google';
 import bgBackgroundImg from '../../../public/bowling-green.jpeg';
-import crowdPicture from '../../../public/CrowdPicture.png';
-import localTalent from '../../../public/LocalTalent.png';
 import posterImg from '../../../public/Poster_2024.png';
 import facebook from '../../../public/FacebookLogo.png';
 import '../globals.css';
