@@ -22,14 +22,15 @@ export default async function About() {
           }
         >
           2024 Band List
-          <a
+          <Link
             href='/AboutTheBands.pdf'
             target='_blank'
+            locale={false}
             rel='noopener noreferrer'
             className='text-center text-base text-white'
           >
             Click for More!
-          </a>
+          </Link>
         </div>
 
         <div className='mx-4 flex flex-row flex-wrap justify-center rounded-b-xl bg-dark-blue py-1'>
