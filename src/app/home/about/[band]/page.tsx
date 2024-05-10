@@ -9,7 +9,7 @@ import { fetchBandByPageLink } from '@/lib/data';
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 
-export default async function JollyGabbers({
+export default async function BandDetails({
   params,
 }: {
   params: { band: string };
@@ -38,13 +38,7 @@ export default async function JollyGabbers({
             </h4>
           </div>
           <div className='mx-4 flex flex-col items-center justify-around rounded-b-xl bg-dark-blue'>
-            <div className='w-1/2 pt-4'>
-              {/* <Image
-                src={jollyGabbers}
-                className='rounded-3xl border-2 border-white'
-                quality={100}
-                alt={bandData[0].name + ' band photo'}
-              /> */}
+            <div className='flex w-1/3 justify-center pt-4'>
               <ImageContainer
                 imgLink={bandData[0].imglink}
                 altDesc={bandData[0].name + ' band photo'}

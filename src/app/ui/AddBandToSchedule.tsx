@@ -1,6 +1,4 @@
-// import { FormEvent } from 'react';
-import { Performance } from '@/lib/definitions';
-import { sql } from '@vercel/postgres';
+import { addToSchedule } from '@/lib/data';
 import { redirect } from 'next/navigation';
 
 async function create(formData: FormData) {
@@ -11,28 +9,26 @@ async function create(formData: FormData) {
   const endTime = formData.get('End');
   const location = formData.get('Location');
 
-  // See if we can use the Function from Data file instead. Abstraction!
-
-  // const newPerf: Performance  = {
-  //   band: bandName?.toString(),
-  //   starttime: startTime,
-  //   endtime: endTime,
-  //   location: location
-  // }
-
-  // await addToSchedule();
-
-  await sql`
-    INSERT INTO schedule (band, starttime, endtime, location) 
-    VALUES (${bandName?.toString()}, ${startTime?.toString()}, ${endTime?.toString()}, ${location?.toString()})`;
-
+  if (bandName && startTime && endTime && location) {
+    console.log(startTime.toString());
+    await addToSchedule(
+      bandName.toString(),
+      startTime.toString(),
+      endTime.toString(),
+      location.toString()
+    );
+  }
   redirect(`/admin/schedule`);
 }
 
-export default function AddBandForm() {
+export default function AddBandToScheduleForm() {
   return (
     <form action={create}>
-      <div className='flex flex-row justify-around'>
+      <div className='flex flex-row flex-wrap justify-around'>
+        <div className='flex w-1/2 flex-col'>
+          <span>Band</span>
+          <input className='m-1 p-1 text-black' type='text' name='Band' />
+        </div>
         <div className='flex flex-col'>
           <span>Start Time</span>
           <input
@@ -49,19 +45,15 @@ export default function AddBandForm() {
             name='End'
           />
         </div>
-        <div className='flex flex-col'>
-          <span>Band</span>
-          <input className='m-1 p-1 text-black' type='text' name='Band' />
-        </div>
-        <div className='flex flex-col'>
+        <div className='flex w-1/2 flex-col'>
           <span>Location</span>
           <input className='m-1 p-1 text-black' type='text' name='Location' />
         </div>
         <button
-          className='mt-4 rounded-lg bg-green-700 px-6 hover:bg-green-500'
+          className='mt-6 w-1/3 rounded-lg bg-green-700 px-6 hover:bg-green-500'
           type='submit'
         >
-          Submit
+          Add Band to Schedule
         </button>
       </div>
     </form>

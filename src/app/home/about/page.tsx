@@ -7,10 +7,10 @@ const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default async function About() {
-  const bandData = await fetchBands();
-  const bandData2 = await fetchSchedule();
-  let bandList: string[] = [];
-  bandData2.map((x) => bandList.push(x.band));
+  //const bandInfo = await fetchBands();
+  const bandsOnSchedule = await fetchSchedule();
+  //let bandsOnSchedule: string[] = [];
+  //schedule.map((x) => bandsOnSchedule.push(x.band));
 
   return (
     <main className={montserrat.className + ' w-3/4 pt-10'}>
@@ -22,30 +22,38 @@ export default async function About() {
           }
         >
           2024 Band List
-          <Link
-            href='/AboutTheBands.pdf'
-            target='_blank'
-            locale={false}
-            rel='noopener noreferrer'
-            className='text-center text-base text-white'
-          >
-            Click for More!
-          </Link>
+          <div className='text-center text-base text-white'>
+            Click on a Band for More!
+          </div>
         </div>
 
         <div className='mx-4 flex flex-row flex-wrap justify-center rounded-b-xl bg-dark-blue py-1'>
-          {bandList.map((x, index) => {
-            return (
+          {bandsOnSchedule.map((x, index) => {
+            return x.pagelink !== null ? (
               <a
-                href='/AboutTheBands.pdf'
-                target='_blank'
-                rel='noopener noreferrer'
                 key={index}
                 className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue hover:bg-base-orange hover:text-white'
+                href={'/home/about/' + x.pagelink}
               >
-                <div className=''>{x}</div>
+                {x.band}
               </a>
+            ) : (
+              <div
+                key={index}
+                className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue'
+              >
+                {x.band}
+              </div>
             );
+            // <a
+            //   href={'/home/about'}
+            //   target='_blank'
+            //   rel='noopener noreferrer'
+            //   key={index}
+            //   className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue hover:bg-base-orange hover:text-white'
+            // >
+            //   <div className=''>{x.band}</div>
+            // </a>
           })}
         </div>
       </div>

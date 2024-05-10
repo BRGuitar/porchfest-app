@@ -1,7 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import ScheduleCards from '@/app/ui/Schedule';
-import AddBandForm from '@/app/ui/AddBand';
+import AddBandToScheduleForm from '@/app/ui/AddBandToSchedule';
 import { fetchSchedule } from '@/lib/data';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
@@ -21,7 +21,7 @@ export default async function EditSchedule() {
         </div>
         <div className='border-2 border-white p-4'>
           <h2 className='mb-4 text-lg'>Add a Band</h2>
-          <AddBandForm />
+          <AddBandToScheduleForm />
         </div>
         <h4 className='pt-6'>Current Schedule:</h4>
         <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6'>

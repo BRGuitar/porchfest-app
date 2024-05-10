@@ -36,6 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     "Pagliai's",
     'GAS Disc Golf',
     'Round N Round Gifts',
+    'Sunset Bistro',
   ];
   return (
     <div id='appContainer' className='flex flex-col'>
