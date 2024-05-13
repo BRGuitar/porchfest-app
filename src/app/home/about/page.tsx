@@ -7,10 +7,7 @@ const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default async function About() {
-  //const bandInfo = await fetchBands();
   const bandsOnSchedule = await fetchSchedule();
-  //let bandsOnSchedule: string[] = [];
-  //schedule.map((x) => bandsOnSchedule.push(x.band));
 
   return (
     <main className={montserrat.className + ' w-3/4 pt-10'}>

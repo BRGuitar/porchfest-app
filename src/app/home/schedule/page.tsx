@@ -5,7 +5,7 @@ export default async function Schedule() {
   const schedule = await fetchSchedule();
   return (
     <main className='w-fit pt-10'>
-      <div className='mx-2 max-h-[590px] overflow-auto rounded-3xl bg-neutral-200'>
+      <div className='mx-2 max-h-[570px] overflow-auto rounded-3xl bg-neutral-200'>
         <h4 className='mx-4 mb-1 mt-4 rounded-t-xl border-b-4 border-base-orange bg-base-orange pt-2 text-center text-3xl text-white'>
           Saturday, June 8th
         </h4>

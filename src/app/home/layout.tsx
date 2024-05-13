@@ -162,8 +162,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <div className='flex h-2 bg-white'></div>
             <div className='flex min-h-32 flex-col items-center justify-center bg-gray-300 text-dark-blue'>
-              <h5>Questions? Contact Us!</h5>
-              <h5>porchfest@gmail.com | 419 575 1234</h5>
+              <h5>Any Questions? Shoot us an Email!</h5>
+              <h5>brian_young3@yahoo.com</h5>
               <Link href='/admin'>Admin Page</Link>
             </div>
             <div className='flex h-2 bg-white'></div>
