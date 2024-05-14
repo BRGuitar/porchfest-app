@@ -46,7 +46,7 @@ export default function UpdateScheduleForm({
         value={id}
         name='PerformanceId'
       />
-      <div className='flex flex-row justify-around'>
+      <div className='flex flex-row justify-around text-white'>
         <div className='flex w-1/3 flex-col'>
           <span>Band Name</span>
           <input
@@ -75,7 +75,7 @@ export default function UpdateScheduleForm({
           />
         </div>
       </div>
-      <div className='flex flex-col items-center p-4'>
+      <div className='flex flex-col items-center p-4 text-white'>
         <div className='flex w-full flex-col items-center'>
           <span>Location</span>
           <textarea

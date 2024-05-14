@@ -5,7 +5,7 @@ const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
 export default function Admin() {
   return (
-    <div className={montserrat.className + ' flex flex-col p-6'}>
+    <div className={montserrat.className + ' flex flex-col p-6 text-white'}>
       <span>ACTIONS</span>
       <div className='flex flex-row'>
         <Link

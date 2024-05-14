@@ -24,7 +24,7 @@ async function create(formData: FormData) {
 export default function AddBandToScheduleForm() {
   return (
     <form action={create}>
-      <div className='flex flex-row flex-wrap justify-around'>
+      <div className='flex flex-row flex-wrap justify-around text-white'>
         <div className='flex w-1/2 flex-col'>
           <span>Band</span>
           <input className='m-1 p-1 text-black' type='text' name='Band' />

@@ -26,7 +26,7 @@ export default function UpdateBandForm({
   return (
     <form action={create}>
       <input className='hidden' type='text' readOnly value={id} name='BandId' />
-      <div className='flex flex-row justify-around'>
+      <div className='flex flex-row justify-around text-white'>
         <div className='flex w-1/3 flex-col'>
           <span>Band Name</span>
           <input
@@ -55,7 +55,7 @@ export default function UpdateBandForm({
           />
         </div>
       </div>
-      <div className='flex flex-col items-center p-4'>
+      <div className='flex flex-col items-center p-4 text-white'>
         <div className='flex w-full flex-col items-center'>
           <span>Bio</span>
           <textarea
