@@ -11,7 +11,7 @@ export default async function About() {
 
   return (
     <main className={montserrat.className + ' w-3/4 pt-10'}>
-      <div className='mx-2 max-h-[590px] overflow-auto rounded-3xl bg-neutral-100 pb-4'>
+      <div className='mx-2 max-h-[600px] overflow-auto rounded-3xl bg-neutral-100 pb-4'>
         <div
           className={
             lilita.className +

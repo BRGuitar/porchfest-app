@@ -7,10 +7,7 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function Info() {
   return (
     <main className={montserrat.className + ' w-3/4 pt-12'}>
-      {/* <div className='pb-1 text-3xl drop-shadow-[3.0px_3.0px_rgba(23,37,84)] md:text-4xl lg:text-5xl'>
-        More Info
-      </div> */}
-      <div className='mx-2 max-h-[570px] overflow-auto rounded-3xl bg-neutral-100'>
+      <div className='mx-2 max-h-[580px] overflow-auto rounded-3xl bg-neutral-100'>
         <h4
           className={
             lilita.className +

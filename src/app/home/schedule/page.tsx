@@ -5,8 +5,8 @@ export default async function Schedule() {
   const schedule = await fetchSchedule();
   return (
     <main className='w-fit pt-10'>
-      <div className='mx-2 max-h-[570px] overflow-auto rounded-3xl bg-neutral-200'>
-        <h4 className='mx-4 mb-1 mt-4 rounded-t-xl border-b-4 border-base-orange bg-base-orange pt-2 text-center text-3xl text-white'>
+      <div className='mx-2 max-h-[590px] overflow-auto rounded-3xl bg-neutral-200'>
+        <h4 className='mx-4 mb-1 mt-4 rounded-t-xl border-b-4 border-base-orange bg-base-orange pt-2 text-center text-2xl text-white'>
           Saturday, June 8th
         </h4>
         <div className='flex flex-row justify-center'>
@@ -16,7 +16,6 @@ export default async function Schedule() {
                 adminMode={false}
                 schedule={schedule.slice(0, schedule.length / 2)}
               />
-              {/* <ScheduleCards adminMode={false} schedule={schedule} /> */}
             </tbody>
           </table>
           <table className='table-fixed border-separate border-spacing-x-0 border-spacing-y-1 px-4 pb-4'>
