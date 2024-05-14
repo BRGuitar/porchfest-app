@@ -31,7 +31,7 @@ export default async function EditBands() {
             Back
           </Link>
         </div>
-        <div className='border-2 border-white p-4'>
+        <div className='border-2 border-white p-4 text-white'>
           <h2 className='mb-1 text-lg'>Add a Band to the Band List</h2>
           <h2 className='mb-4 text-sm'>
             Ensure Band Name is same as listed on the Schedule
@@ -39,7 +39,7 @@ export default async function EditBands() {
           <AddBandToBandListForm />
         </div>
         <h4 className='pt-6'>Current Band List:</h4>
-        <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6'>
+        <table className='table-fixed border-separate border-spacing-x-1 border-spacing-y-2 px-6 text-white'>
           <tbody>
             <tr>
               <th>Band Name</th>

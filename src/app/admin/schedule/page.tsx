@@ -19,7 +19,7 @@ export default async function EditSchedule() {
             Back
           </Link>
         </div>
-        <div className='border-2 border-white p-4'>
+        <div className='border-2 border-white p-4 text-white'>
           <h2 className='mb-4 text-lg'>Add a Band</h2>
           <AddBandToScheduleForm />
         </div>
