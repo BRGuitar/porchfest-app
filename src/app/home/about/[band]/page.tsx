@@ -38,7 +38,7 @@ export default async function BandDetails({
             </h4>
           </div>
           <div className='mx-4 flex flex-col items-center justify-around rounded-b-xl bg-dark-blue'>
-            <div className='flex w-1/3 justify-center pt-4'>
+            <div className='flex w-1/2 justify-center pt-4'>
               <ImageContainer
                 imgLink={bandData[0].imglink}
                 altDesc={bandData[0].name + ' band photo'}

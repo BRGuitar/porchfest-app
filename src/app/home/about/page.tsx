@@ -24,7 +24,7 @@ export default async function About() {
           </div>
         </div>
 
-        <div className='mx-4 flex flex-row flex-wrap justify-center rounded-b-xl bg-dark-blue py-1'>
+        <div className='mx-4 flex flex-row flex-wrap justify-center rounded-b-xl bg-dark-blue py-4'>
           {bandsOnSchedule.map((x, index) => {
             return x.pagelink !== null ? (
               <a
