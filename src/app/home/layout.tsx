@@ -17,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     'Newlove Realty',
     'For Keeps',
     'Jeff Dennis (Councilman-at-Large)',
+    'BGSU College of Musical Arts',
   ];
   const silverSponsors = [
     "Jac & Do's",
@@ -75,8 +76,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
               </Link>
               <div className='flex h-full w-2/3 flex-col items-center justify-start border-x-8 border-white bg-dark-blue px-4 py-2'>
-                <span className='flex flex-col items-center pt-4'>
-                  <div className='flex flex-col items-center pb-6'>
+                <span className='flex h-full flex-col items-center justify-around'>
+                  <div className='flex flex-col items-center'>
                     <h5 className='mb-2 border-b-2 border-base-orange text-center text-3xl text-white'>
                       Platinum-Level Sponsor
                     </h5>
@@ -98,7 +99,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       })}
                     </div>
                   </div>
-                  <div className='flex flex-col items-center pb-6'>
+                  <div className='flex flex-col items-center'>
                     <h5 className='mb-2 border-b-2 border-base-orange text-center text-2xl text-white'>
                       Gold-Level Sponsors
                     </h5>
@@ -120,7 +121,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       })}
                     </div>
                   </div>
-                  <div className='flex flex-col items-center pb-6'>
+                  <div className='flex flex-col items-center'>
                     <h5 className='mb-2 border-b-2 border-base-orange text-center text-xl text-white'>
                       Silver-Level Sponsors
                     </h5>
