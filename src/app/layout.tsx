@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bebas_Neue, Lilita_One } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={bebas.className}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
