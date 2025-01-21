@@ -11,32 +11,26 @@ const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const platinumSponsors = ["Arlyn's Good Beer"];
-  const goldSponsors = [
-    'Juniper Brewing Co.',
-    'Newlove Realty',
+  const platinumSponsors = [
+    'Brewing Green',
     'For Keeps',
-    'Jeff Dennis (Councilman-at-Large)',
+    'Newlove Realty',
+    'Visit BG',
+  ];
+  const goldSponsors = [
     'BGSU College of Musical Arts',
+    'Civista Bank',
+    'Juniper Brewing Co.',
+    'Jeff Dennis (Councilman-at-Large)',
   ];
   const silverSponsors = [
-    "Jac & Do's",
+    "Arlyn's Good Beer",
     'Jim Palmer Excavating',
     'BGAC',
-    'Mary Dennis',
     'Wood County Insurance',
     'Wilson Myers House',
     'Bob Midden',
-    'Grounds for Thought',
-    'BG Pedal Co.',
     'Rotary',
-    'Amy Karlovek',
-    "Downtown/Wally's",
-    'Howards',
-    'Civista Bank',
-    "Pagliai's",
-    'GAS Disc Golf',
-    'Round N Round Gifts',
     'Sunset Bistro',
   ];
   return (
