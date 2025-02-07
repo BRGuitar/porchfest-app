@@ -3,14 +3,15 @@ import { Lilita_One } from 'next/font/google';
 import mapImg from '../../../../public/PorchfestMap.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import '../../globals.css';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function Map() {
   return (
-    <main className={montserrat.className + ' w-3/4 pt-12'}>
-      <div className='mx-2 overflow-auto rounded-3xl bg-white'>
+    <main className={montserrat.className + ' main-container pt-12'}>
+      <div className='mx-2 w-3/4 rounded-3xl bg-white'>
         <h6
           className={
             lilita.className +

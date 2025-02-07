@@ -23,9 +23,12 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function NavBar() {
   const pathname = usePathname();
   const linkStyle = (linkName: string) =>
-    clsx('text-2xl rounded-lg px-6 pt-1 mx-1 hover:bg-white hover:text-black', {
-      'bg-white text-black': pathname.match(linkName),
-    });
+    clsx(
+      'text-2xl rounded-lg px-4 pt-1 mx-1 hover:bg-white hover:text-dark-blue',
+      {
+        'bg-white text-black': pathname.match(linkName),
+      }
+    );
   return (
     <div
       id='topNavBar'
@@ -49,18 +52,21 @@ export default function NavBar() {
           <span className='px-1 text-xl'> | MAY 31, 2025</span>
         </div>
       </div>
-      <div className='px-12'>
+      <div className='px-8'>
+        <Link href='/home' className={linkStyle('/home$')}>
+          Home
+        </Link>
         <Link href='/home/schedule' className={linkStyle('/home/schedule')}>
-          2024 Schedule
+          Schedule
         </Link>
         <Link href='/home/map' className={linkStyle('/home/map')}>
           Map
         </Link>
-        <Link href='/home/info' className={linkStyle('/home/info')}>
-          More Info
-        </Link>
         <Link href='/home/about' className={linkStyle('/home/about')}>
           The Bands
+        </Link>
+        <Link href='/home/info' className={linkStyle('/home/info')}>
+          More Info
         </Link>
       </div>
     </div>

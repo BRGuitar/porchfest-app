@@ -24,16 +24,13 @@ export default async function ScheduleCards({ adminMode, schedule }) {
       <tr key={index}>
         <td className='rounded-l-xl bg-white px-2 py-1 text-base text-black'>
           <div className='flex flex-col'>
-            <div className=''>
-              {item.starttime
-                .toLocaleTimeString()
-                .replace(':00', '')
-                .replace(' PM', '') + ' - '}
+            <div className='px-6 text-xl'>
+              {item.starttime.toLocaleTimeString().replace(':00', '') + ' - '}
               {item.endtime.toLocaleTimeString().replace(':00', '')}
             </div>
           </div>
         </td>
-        <td className='border-b-2 border-white bg-dark-blue px-4 py-2 text-xl text-white'>
+        <td className='border-b-2 border-white bg-dark-blue px-4 py-2 text-2xl text-white'>
           {item.pagelink !== null ? (
             <Link
               className='hover:text-white hover:underline hover:decoration-base-orange'

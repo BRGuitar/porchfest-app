@@ -24,13 +24,11 @@ export default function PlatinumSponsorTiles() {
     'Sunset Bistro',
   ];
   return (
-    <div className='flex flex-col bg-dark-blue p-4'>
+    <div className='flex flex-col bg-dark-blue py-6'>
       <div id='Platinum-Sponsors' className='flex flex-col pb-6'>
-        {/* <h5 className='w-full text-2xl'>Thank You, Sponsors!</h5> */}
-        <h5 className='w-full rounded-sm bg-base-orange px-4 pb-2 pt-3 text-center text-3xl'>
+        <h5 className='w-full px-4 py-2 text-center text-4xl'>
           Thank you, Sponsors!
         </h5>
-        <div className='flex h-1 bg-white'></div>
         <div className='flex flex-row justify-center pt-8'>
           <Image
             className='px-2'
@@ -42,7 +40,7 @@ export default function PlatinumSponsorTiles() {
           <Image
             className='mx-6 rounded-md bg-white px-3 py-1'
             alt='For Keeps logo'
-            src='/Sponsors/for-keeps.png'
+            src='/Sponsors/for-keeps.jpeg'
             height={160}
             width={150}
           />
@@ -63,12 +61,11 @@ export default function PlatinumSponsorTiles() {
         </div>
       </div>
       <div id='Gold-Sponsors' className='flex flex-col'>
-        {/* <h5 className='w-full text-center text-2xl'>Gold</h5> */}
         <div className='flex flex-row justify-center py-2'>
           <Image
             className='mx-2 rounded-md bg-white py-1'
-            alt='Jeff Dennis ofr City Council At-Large logo'
-            src='/Sponsors/jeff-dennis.png'
+            alt='Jeff Dennis of City Council At-Large logo'
+            src='/Sponsors/jeff-dennis.jpeg'
             height={20}
             width={85}
           />
@@ -95,8 +92,7 @@ export default function PlatinumSponsorTiles() {
           />
         </div>
       </div>
-      <div id='Silver-Sponsors' className='w-full pb-4 pt-4'>
-        {/* <h5 className='w-full text-center text-lg'>Silver</h5> */}
+      <div id='Silver-Sponsors' className='w-full pt-4'>
         <div className='flex flex-row flex-wrap justify-center'>
           {silverSponsors.map((sponsor, index) => {
             return (

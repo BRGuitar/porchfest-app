@@ -10,8 +10,8 @@ export default async function About() {
   const bandsOnSchedule = await fetchSchedule();
 
   return (
-    <main className={montserrat.className + ' w-3/4 pt-10'}>
-      <div className='mx-2 max-h-[600px] overflow-auto rounded-3xl bg-neutral-100 pb-4'>
+    <main className={montserrat.className + ' main-container pt-10'}>
+      <div className='mx-2 w-3/4 rounded-3xl bg-neutral-100 pb-4'>
         <div
           className={
             lilita.className +
