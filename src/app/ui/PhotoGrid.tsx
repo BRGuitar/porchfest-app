@@ -95,7 +95,7 @@ export default function PhotoGrid() {
   ];
   return (
     <div className='bg-white'>
-      <div className='w-full px-4 pt-2 text-5xl text-dark-blue'>
+      <div className=' mb-2 w-full border-b-2 border-base-orange px-4 pt-6 text-5xl text-dark-blue'>
         2024 Porchfest Gallery
       </div>
       <div className='px-8'>
@@ -106,7 +106,7 @@ export default function PhotoGrid() {
           images={images}
         />
       </div>
-      <div className='w-full px-4 text-end text-2xl text-dark-blue'>
+      <div className='w-full px-4 pb-2 text-end text-2xl text-dark-blue'>
         Pictures courtesy of BG FALCON MEDIA.
       </div>
     </div>

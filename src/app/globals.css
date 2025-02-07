@@ -33,3 +33,8 @@ body {
     text-wrap: balance;
   }
 }
+
+#home-banner {
+  background-image: url('/crowd-background3.png');
+  background-size: cover;
+}
