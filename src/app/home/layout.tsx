@@ -6,6 +6,7 @@ import '../globals.css';
 import Image from 'next/image';
 import NavBar from '@/app/ui/NavBar';
 import Link from 'next/link';
+import PhotoGrid from '../ui/PhotoGrid';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
@@ -34,22 +35,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     'Sunset Bistro',
   ];
   return (
-    <div id='appContainer' className='flex flex-col'>
+    <div className='flex flex-col'>
       <NavBar />
       <div className='flex h-fit flex-col'>
         <div>
-          <div className='absolute -z-10'>
-            <div className='flex h-1 bg-base-orange'></div>
-            <div className='flex h-1 bg-white'></div>
-            <Image
-              src={bgBackgroundImg}
-              placeholder='blur'
-              className='w-full opacity-75'
-              quality={100}
-              alt='Background Image of Bowling Green, Ohio'
-            />
+          <div className=''>
+            <div className='flex h-2 bg-base-orange'></div>
+            <div className='flex h-3 bg-white'></div>
+            {children}
             <div className='flex h-2 bg-white'></div>
-            <div
+            <PhotoGrid />
+            {/* <div
               className={
                 lilita.className + ' flex h-96 min-w-[1080px] flex-row'
               }
@@ -154,7 +150,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   alt='PorchFest Facebook Screenshot'
                 />
               </Link>
-            </div>
+            </div> */}
             <div className='flex h-2 bg-white'></div>
             <div className='flex min-h-28 flex-col items-center justify-center bg-gray-300 text-lg text-dark-blue'>
               <h5>Any Questions? Shoot us an Email!</h5>
@@ -163,9 +159,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <div className='flex h-2 bg-white'></div>
           </div>
-          <div className='flex h-full items-center justify-center'>
+          {/* <div className='flex h-full items-center justify-center'>
             {children}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -23,49 +23,46 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function NavBar() {
   const pathname = usePathname();
   const linkStyle = (linkName: string) =>
-    clsx('text-xl rounded-lg px-6 pt-1 hover:bg-white hover:text-black', {
+    clsx('text-2xl rounded-lg px-6 pt-1 mx-1 hover:bg-white hover:text-black', {
       'bg-white text-black': pathname.match(linkName),
     });
   return (
     <div
       id='topNavBar'
-      className='flex h-36 flex-row items-end justify-around bg-dark-blue py-1 pb-2 text-white'
+      className='flex h-20 flex-row items-center justify-between bg-dark-blue text-white'
     >
-      {/* <Link href='/home' className={linkStyle('/home$')}>
-        Home
-      </Link> */}
-      <Link href='/home/schedule' className={linkStyle('/home/schedule')}>
-        2024 Schedule
-      </Link>
-      <Link href='/home/map' className={linkStyle('/home/map')}>
-        PorchFest Map
-      </Link>
-      <div id='logoContainer' className='flex flex-row items-center'>
+      <div id='logoContainer' className='flex flex-row items-center px-6'>
         <Link href='/home'>
           <Image
             src={porchfestLogo}
-            className='h-32 w-32 pt-1'
+            className='h-14 w-14'
             alt='porchfest logo'
           ></Image>
         </Link>
         <div
           id='headerTitle'
           className={
-            lilita.className +
-            ' flex flex-col items-center justify-around py-4 pl-2 text-white'
+            lilita.className + ' flex items-center py-2 pl-2 text-white'
           }
         >
-          <span className='text-4xl'>Live Music Festival</span>
-          <span className='text-2xl'>&mdash; BOWLING GREEN, OH &mdash;</span>
-          <span className='text-2xl'>On & Around Eberly Avenue</span>
+          <span className='px-1 text-4xl'>PORCHFEST</span>
+          <span className='px-1 text-xl'> | MAY 31, 2025</span>
         </div>
       </div>
-      <Link href='/home/info' className={linkStyle('/home/info')}>
-        More Info
-      </Link>
-      <Link href='/home/about' className={linkStyle('/home/about')}>
-        About the Bands
-      </Link>
+      <div className='px-12'>
+        <Link href='/home/schedule' className={linkStyle('/home/schedule')}>
+          2024 Schedule
+        </Link>
+        <Link href='/home/map' className={linkStyle('/home/map')}>
+          Map
+        </Link>
+        <Link href='/home/info' className={linkStyle('/home/info')}>
+          More Info
+        </Link>
+        <Link href='/home/about' className={linkStyle('/home/about')}>
+          The Bands
+        </Link>
+      </div>
     </div>
   );
 }
