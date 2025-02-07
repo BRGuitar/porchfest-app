@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Image
                   className='mb-2 mt-4 bg-white'
                   alt='facebook logo'
-                  src='/facebook.png'
+                  src='/facebook.jpeg'
                   height={60}
                   width={60}
                 ></Image>
