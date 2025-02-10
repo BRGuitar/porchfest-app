@@ -7,7 +7,9 @@ import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import { deleteFromSchedule } from '@/lib/data';
 import EditScheduleButton from './EditScheduleButton';
+import { Lilita_One } from 'next/font/google';
 
+const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
 async function deleteRow(id: string) {
@@ -21,29 +23,37 @@ async function deleteRow(id: string) {
 export default async function ScheduleCards({ adminMode, schedule }) {
   return schedule.map((item: any, index) => {
     return (
-      <tr key={index}>
-        <td className='rounded-l-xl bg-white px-2 py-1 text-base text-black'>
-          <div className='flex flex-col'>
-            <div className='px-6 text-xl'>
-              {item.starttime.toLocaleTimeString().replace(':00', '') + ' - '}
-              {item.endtime.toLocaleTimeString().replace(':00', '')}
+      <tr className={lilita.className} key={index}>
+        <td className='border-b-4 border-black px-3 text-base text-dark-blue'>
+          <div className='text-3xl'>
+            <div className='h-6'>
+              {item.starttime.toLocaleTimeString().replace(':00 PM', '')}
             </div>
+            <div className='pl-1 text-lg'>PM</div>
           </div>
         </td>
-        <td className='border-b-2 border-white bg-dark-blue px-4 py-2 text-2xl text-white'>
-          {item.pagelink !== null ? (
-            <Link
-              className='hover:text-white hover:underline hover:decoration-base-orange'
-              href={'/home/about/' + item.pagelink}
-            >
-              {item.band}
-            </Link>
-          ) : (
-            <div>{item.band}</div>
-          )}
+        <td className=' w-3/4 px-4 py-2 text-center text-4xl text-base-orange lg:text-5xl'>
+          <div className='flex flex-col text-dark-blue'>
+            {item.pagelink !== null ? (
+              <Link
+                className='hover:opacity-80'
+                href={'/home/about/' + item.pagelink}
+              >
+                {item.band}
+              </Link>
+            ) : (
+              <div>{item.band}</div>
+            )}
+            <div className='text-lg text-black'>{item.location}</div>
+          </div>
         </td>
-        <td className='rounded-r-md border-b-2 border-white bg-dark-blue px-4 py-2 text-right text-base text-white'>
-          {item.location}
+        <td className='border-b-4 border-black px-3 text-right text-base text-dark-blue'>
+          <div className='text-3xl'>
+            <div className='h-6'>
+              {item.endtime.toLocaleTimeString().replace(':00 PM', '')}
+            </div>
+            <div className='pr-1 text-lg'>PM</div>
+          </div>
         </td>
         {adminMode ? (
           <>

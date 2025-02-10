@@ -75,7 +75,7 @@ export default function NavBar() {
           </Link>
         </div>
       </div>
-      <div className='hamburgerMenu flex justify-around lg:hidden'>
+      <div className='flex justify-around lg:hidden'>
         <Link
           href='/home/schedule'
           className={hamburgerLinkStyle('/home/schedule')}

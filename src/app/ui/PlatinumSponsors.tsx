@@ -31,7 +31,7 @@ export default function PlatinumSponsorTiles() {
         </h5>
         <div className='flex flex-row justify-center pt-8'>
           <Image
-            className=''
+            className='px-2'
             alt='Brewing Green logo'
             src='/Sponsors/brewing-green.png'
             height={180}
