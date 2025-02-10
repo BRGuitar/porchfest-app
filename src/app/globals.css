@@ -19,7 +19,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
-  min-width: 1080px;
+  min-width: 780px;
   /* background: linear-gradient(
       to bottom,
       transparent,
@@ -32,6 +32,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+#admin-page-container {
+  background-color: #0a4358;
 }
 
 #home-banner {

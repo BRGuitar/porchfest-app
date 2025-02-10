@@ -38,7 +38,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   height={60}
                   width={60}
                 ></Image>
-                <h5 className='pb-6 text-3xl'>
+                <h5 className='pb-6 text-2xl lg:text-3xl'>
                   Follow us on Facebook for the Latest Porchfest news!
                 </h5>
               </Link>

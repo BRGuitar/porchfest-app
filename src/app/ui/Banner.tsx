@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Banner() {
   return (
-    <div className='flex flex-row justify-around  bg-base-orange p-12 px-40'>
+    <div className='flex flex-row justify-around bg-base-orange p-6 px-40'>
       <Link
         href='/home/about'
         className='flex flex-col rounded-sm border-4 border-gray-200 bg-white p-4 text-dark-blue hover:border-white hover:bg-dark-blue hover:text-white'
@@ -16,11 +16,13 @@ export default function Banner() {
           height={250}
           width={250}
         />
-        <div className='pt-2 text-center text-2xl'>About the Bands</div>
+        <div className='pt-2 text-center text-lg lg:text-2xl'>
+          About the Bands
+        </div>
       </Link>
       <Link
         href='/home/map'
-        className='flex flex-col rounded-sm border-4 border-gray-200 bg-white p-4 text-dark-blue hover:border-white hover:bg-dark-blue hover:text-white'
+        className='mx-4 flex flex-col rounded-sm border-4 border-gray-200 bg-white p-4 text-dark-blue hover:border-white hover:bg-dark-blue hover:text-white'
       >
         <Image
           className='rounded-sm border-2 border-white'
@@ -29,7 +31,7 @@ export default function Banner() {
           height={250}
           width={250}
         />
-        <div className='pt-2 text-center text-2xl'>Festival Map</div>
+        <div className='pt-2 text-center text-lg lg:text-2xl'>Festival Map</div>
       </Link>
       <Link
         href='/home/schedule'
@@ -42,7 +44,9 @@ export default function Banner() {
           height={250}
           width={250}
         />
-        <div className='pt-2 text-center text-2xl'>2025 Schedule</div>
+        <div className='pt-2 text-center text-lg lg:text-2xl'>
+          2025 Schedule
+        </div>
       </Link>
     </div>
   );

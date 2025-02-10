@@ -31,28 +31,28 @@ export default function PlatinumSponsorTiles() {
         </h5>
         <div className='flex flex-row justify-center pt-8'>
           <Image
-            className='px-2'
+            className=''
             alt='Brewing Green logo'
             src='/Sponsors/brewing-green.png'
             height={180}
             width={180}
           />
           <Image
-            className='mx-6 rounded-md bg-white px-3 py-1'
+            className='mx-2 rounded-md bg-white px-3 py-1 lg:mx-6'
             alt='For Keeps logo'
             src='/Sponsors/for-keeps.jpeg'
             height={160}
             width={150}
           />
           <Image
-            className='mx-6 rounded-md'
+            className='mx-2 rounded-md lg:mx-6'
             alt='Visit BG logo'
             src='/Sponsors/visit-bg.png'
             height={140}
             width={190}
           />
           <Image
-            className='mx-6 rounded-md bg-white px-1 py-1'
+            className='mx-2 rounded-md bg-white px-1 py-1 lg:mx-6'
             alt='Newlove Realty logo'
             src='/Sponsors/newlove.png'
             height={140}
