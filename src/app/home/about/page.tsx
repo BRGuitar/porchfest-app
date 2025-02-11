@@ -11,18 +11,28 @@ export default async function About() {
   const bandsOnSchedule = await fetchSchedule();
 
   return (
-    <main className={montserrat.className + ' main-container pt-10'}>
+    <main className=''>
       <div className='flex flex-col items-center'>
-        <h4 className={bebas.className + ' text-6xl text-white drop-shadow-xl'}>
-          2024 Band List
-        </h4>
-        <div className='w-3/4 rounded-3xl bg-neutral-100 p-2'>
-          <div className='flex flex-row flex-wrap justify-center rounded-2xl bg-dark-blue px-4 py-6'>
+        <div
+          id='home-banner'
+          className='flex h-72 w-full flex-row justify-center bg-white'
+        >
+          <div className='flex h-full w-full flex-col items-center justify-center bg-white opacity-85'>
+            <h1 className='text-center text-8xl text-dark-blue'>
+              2024 Band List
+            </h1>
+            <h1 className='text-center text-xl text-dark-blue'>
+              (Click on a Band for more info)
+            </h1>
+          </div>
+        </div>
+        <div className='w-3/4 rounded-3xl p-2'>
+          <div className='flex flex-row flex-wrap justify-center rounded-2xl py-6 text-xl'>
             {bandsOnSchedule.map((x, index) => {
               return x.pagelink !== null ? (
                 <a
                   key={index}
-                  className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue hover:bg-base-orange hover:text-white'
+                  className='m-2 flex w-fit flex-col justify-center rounded-xl border border-white bg-dark-blue p-4 px-6 text-center text-white hover:bg-base-orange hover:text-white'
                   href={'/home/about/' + x.pagelink}
                 >
                   {x.band}
@@ -30,7 +40,7 @@ export default async function About() {
               ) : (
                 <div
                   key={index}
-                  className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue'
+                  className='m-2 flex w-fit flex-col justify-center rounded-xl border border-white bg-dark-blue p-4 px-6 text-center text-white'
                 >
                   {x.band}
                 </div>

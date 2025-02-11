@@ -25,11 +25,11 @@ export default async function ScheduleCards({ adminMode, schedule }) {
     return (
       <tr className={lilita.className} key={index}>
         <td className='border-b-4 border-black px-3 text-base text-dark-blue'>
-          <div className='text-3xl'>
-            <div className='h-6'>
+          <div className='text-4xl'>
+            <div className='h-7'>
               {item.starttime.toLocaleTimeString().replace(':00 PM', '')}
             </div>
-            <div className='pl-1 text-lg'>PM</div>
+            <div className='text-lg'>PM</div>
           </div>
         </td>
         <td className=' w-3/4 px-4 py-2 text-center text-4xl text-base-orange lg:text-5xl'>
@@ -48,11 +48,11 @@ export default async function ScheduleCards({ adminMode, schedule }) {
           </div>
         </td>
         <td className='border-b-4 border-black px-3 text-right text-base text-dark-blue'>
-          <div className='text-3xl'>
-            <div className='h-6'>
+          <div className='text-4xl'>
+            <div className='h-7'>
               {item.endtime.toLocaleTimeString().replace(':00 PM', '')}
             </div>
-            <div className='pr-1 text-lg'>PM</div>
+            <div className='text-lg'>PM</div>
           </div>
         </td>
         {adminMode ? (

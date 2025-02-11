@@ -29,9 +29,12 @@ export default function NavBar() {
       }
     );
   const hamburgerLinkStyle = (linkName: string) =>
-    clsx('text-2xl rounded-lg px-4 pt-1 mx-1 my-1 bg-white text-dark-blue', {
-      'border-b-2 border-dark-blue rounded-sm': pathname.match(linkName),
-    });
+    clsx(
+      'text-2xl w-1/4 rounded-t-lg border-2 border-white border-opacity-5 text-center pb-1 pt-2 text-white',
+      {
+        'bg-base-orange': pathname.match(linkName),
+      }
+    );
 
   return (
     <div className='flex flex-col'>
@@ -47,7 +50,8 @@ export default function NavBar() {
               alt='porchfest logo'
             ></Image>
           </Link>
-          <div
+          <Link
+            href='/home'
             id='headerTitle'
             className={
               lilita.className + ' flex items-center py-2 pl-2 text-white'
@@ -55,7 +59,7 @@ export default function NavBar() {
           >
             <span className='px-1 text-4xl'>PORCHFEST</span>
             <span className='px-1 text-xl'> | MAY 31, 2025</span>
-          </div>
+          </Link>
         </div>
         <div className='hidden px-8 lg:block lg:text-white'>
           <Link href='/home' className={linkStyle('/home$')}>
@@ -75,20 +79,26 @@ export default function NavBar() {
           </Link>
         </div>
       </div>
-      <div className='flex justify-around lg:hidden'>
+      <div className='flex justify-around bg-dark-blue lg:hidden'>
         <Link
           href='/home/schedule'
-          className={hamburgerLinkStyle('/home/schedule')}
+          className={'mx-1 ' + hamburgerLinkStyle('/home/schedule')}
         >
           Schedule
         </Link>
-        <Link href='/home/map' className={hamburgerLinkStyle('/home/map')}>
+        <Link
+          href='/home/map'
+          className={'mr-1 ' + hamburgerLinkStyle('/home/map')}
+        >
           Map
         </Link>
         <Link href='/home/about' className={hamburgerLinkStyle('/home/about')}>
           The Bands
         </Link>
-        <Link href='/home/info' className={hamburgerLinkStyle('/home/info')}>
+        <Link
+          href='/home/info'
+          className={'mx-1 ' + hamburgerLinkStyle('/home/info')}
+        >
           More Info
         </Link>
       </div>

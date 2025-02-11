@@ -7,7 +7,7 @@ import Image from 'next/image';
 import NavBar from '@/app/ui/NavBar';
 import Link from 'next/link';
 import PhotoGrid from '../ui/PhotoGrid';
-import PlatinumSponsorTiles from '../ui/PlatinumSponsors';
+import SponsorTiles from '../ui/SponsorTiles';
 import Banner from '../ui/Banner';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className='flex h-1 bg-white'></div>
             <div className='flex justify-center'>{children}</div>
             <div className='flex h-2 bg-white'></div>
-            <PlatinumSponsorTiles />
+            <SponsorTiles />
             <div className='flex min-h-28 flex-col items-center justify-center bg-white p-6 text-lg text-dark-blue'>
               <Link
                 href='https://www.facebook.com/BGPorchFest'

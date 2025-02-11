@@ -35,11 +35,11 @@ export default function PhotoGrid() {
       height: 320,
     },
     {
-      src: '/grid/band.jpg',
+      src: '/grid/CowboyCar.jpg',
       width: 320,
       height: 320,
       customOverlay: (
-        <div className='bg-white p-2 text-black opacity-75'>???</div>
+        <div className='bg-white p-2 text-black opacity-75'>Cowboy Car</div>
       ),
     },
     {

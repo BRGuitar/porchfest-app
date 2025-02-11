@@ -19,38 +19,38 @@ export default async function BandDetails({
 
   if (foundBand) {
     return (
-      <main className={montserrat.className + ' main-container pt-12'}>
-        <div className='w-3/4'>
+      <main className='flex w-full flex-col items-center'>
+        <div
+          id='home-banner'
+          className='flex h-64 w-full flex-row justify-center bg-white'
+        >
+          <div className='flex h-full w-full flex-col items-center justify-center bg-white opacity-85'>
+            <h1 className='text-center text-8xl text-dark-blue'>
+              {bandData[0].name}
+            </h1>
+          </div>
+        </div>
+
+        <div className='flex w-1/2 flex-col items-center p-12'>
+          <ImageContainer
+            imgLink={bandData[0].imglink}
+            altDesc={bandData[0].name + ' band photo'}
+          />
+          <div
+            className={
+              montserrat.className +
+              ' m-2 flex flex-col text-center text-xl text-dark-blue'
+            }
+          >
+            <span className='py-1'>{bandData[0].bio1}</span>
+            <span className='py-1'>{bandData[0].bio2}</span>
+          </div>
           <Link
             href='/home/about'
-            className='ml-6 rounded-md bg-dark-blue px-2 text-sm text-white hover:bg-white hover:text-dark-blue'
+            className='mt-6 rounded-md bg-dark-blue p-2 px-6 text-lg text-white hover:bg-base-orange'
           >
             RETURN TO BAND LIST
           </Link>
-          <div className='mx-2 rounded-3xl bg-neutral-100 py-4'>
-            <div
-              className={
-                bebas.className +
-                ' mx-4 mb-2 flex flex-col items-start rounded-t-2xl bg-base-orange pt-2 text-4xl'
-              }
-            >
-              <h4 className='w-full text-center text-white'>
-                {bandData[0].name}
-              </h4>
-            </div>
-            <div className='mx-4 flex flex-col items-center justify-around rounded-b-xl bg-dark-blue'>
-              <div className='flex w-1/2 justify-center pt-4'>
-                <ImageContainer
-                  imgLink={bandData[0].imglink}
-                  altDesc={bandData[0].name + ' band photo'}
-                />
-              </div>
-              <div className='m-2 flex w-5/6 flex-col text-center text-base text-white'>
-                <span className='py-1'>{bandData[0].bio1}</span>
-                <span className='py-1'>{bandData[0].bio2}</span>
-              </div>
-            </div>
-          </div>
         </div>
       </main>
     );
