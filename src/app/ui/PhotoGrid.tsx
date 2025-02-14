@@ -98,10 +98,34 @@ export default function PhotoGrid() {
       {/* <div className=' mb-2 w-full border-b-2 border-base-orange px-4 pt-6 text-5xl text-dark-blue'>
         2024 Porchfest Gallery
       </div> */}
-      <div className='px-6 pt-2'>
+      <div className='hidden px-6 pt-2 max-[1136px]:block'>
         <Gallery
           rowHeight={320}
           margin={12}
+          enableImageSelection={false}
+          images={images}
+        />
+      </div>
+      <div className='hidden px-6 pt-2 min-[1137px]:block min-[1450px]:hidden'>
+        <Gallery
+          rowHeight={420}
+          margin={12}
+          enableImageSelection={false}
+          images={images}
+        />
+      </div>
+      <div className='hidden px-6 pt-2 min-[1450px]:block min-[1728px]:hidden'>
+        <Gallery
+          rowHeight={500}
+          margin={16}
+          enableImageSelection={false}
+          images={images}
+        />
+      </div>
+      <div className='hidden px-6 pt-2 min-[1728px]:block'>
+        <Gallery
+          rowHeight={400}
+          margin={16}
           enableImageSelection={false}
           images={images}
         />
