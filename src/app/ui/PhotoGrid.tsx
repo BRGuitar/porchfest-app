@@ -106,7 +106,7 @@ export default function PhotoGrid() {
           images={images}
         />
       </div>
-      <div className='hidden px-6 pt-2 min-[1137px]:block min-[1450px]:hidden'>
+      <div className='hidden px-6 pt-2 min-[1137px]:block min-[1440px]:hidden'>
         <Gallery
           rowHeight={420}
           margin={12}
@@ -114,7 +114,7 @@ export default function PhotoGrid() {
           images={images}
         />
       </div>
-      <div className='hidden px-6 pt-2 min-[1450px]:block min-[1728px]:hidden'>
+      <div className='hidden px-6 pt-2 min-[1440px]:block min-[1728px]:hidden'>
         <Gallery
           rowHeight={500}
           margin={16}
