@@ -1,14 +1,9 @@
 import { Bebas_Neue, Lilita_One } from 'next/font/google';
-import bgBackgroundImg from '../../../public/bowling-green.jpeg';
-import posterImg from '../../../public/Poster_2024.png';
-import facebook from '../../../public/FacebookLogo.png';
 import '../globals.css';
 import Image from 'next/image';
 import NavBar from '@/app/ui/NavBar';
 import Link from 'next/link';
-import PhotoGrid from '../ui/PhotoGrid';
 import SponsorTiles from '../ui/SponsorTiles';
-import Banner from '../ui/Banner';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
@@ -33,7 +28,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               >
                 <Image
                   className='mb-2 mt-4 bg-white'
-                  alt='facebook logo'
+                  alt='Facebook Logo'
                   src='/facebook.jpeg'
                   height={60}
                   width={60}

@@ -1,6 +1,6 @@
 import UpdateScheduleForm from '@/app/ui/UpdateScheduleForm';
 import { fetchPerformanceById } from '@/lib/data';
-import { Band, Performance } from '@/lib/definitions';
+import { Performance } from '@/lib/definitions';
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 

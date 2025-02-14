@@ -33,7 +33,7 @@ export default function Map() {
               src={mapImg}
               className='m-auto rounded-2xl px-4 py-2'
               quality={100}
-              alt='PorchFest Facebook Screenshot'
+              alt='2024 Porchfest Map'
             />
           </Link>
         </div>

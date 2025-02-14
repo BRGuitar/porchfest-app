@@ -1,6 +1,4 @@
 import '../globals.css';
-
-import { sql } from '@vercel/postgres';
 import { redirect } from 'next/navigation';
 import DeleteButton from './DeleteButton';
 import { Montserrat } from 'next/font/google';

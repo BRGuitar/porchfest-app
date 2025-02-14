@@ -42,12 +42,3 @@ body {
   background-image: url('/crowd-background.png');
   background-size: cover;
 }
-
-.main-container {
-  background-image: url('/crowd-background2.jpg');
-  background-size: cover;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-bottom: 48px;
-}

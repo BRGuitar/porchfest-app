@@ -110,7 +110,7 @@ export default function SponsorTiles() {
           >
             <Image
               className='mx-2 rounded-md bg-white px-2 py-1'
-              alt='Visit BG logo'
+              alt='Civista Bank logo'
               src='/Sponsors/civista-bank.png'
               height={20}
               width={160}

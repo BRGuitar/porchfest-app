@@ -1,6 +1,3 @@
-import jollyGabbers from '@/photos/bands/jolly_gabbers.png';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import ImageContainer from '@/app/ui/ImageContainer';
 import { Montserrat, Bebas_Neue } from 'next/font/google';
 import Link from 'next/link';

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import porchfestLogo from '../../../public/crowd-background3.png';
 import '../globals.css';
 import PhotoGrid from '../ui/PhotoGrid';
 import Banner from '../ui/Banner';
@@ -15,7 +13,6 @@ export default function Home() {
           <h1 className='text-center text-8xl text-dark-blue'>
             Live Music Festival
           </h1>
-          {/* <h1 className='text-center text-6xl text-dark-blue'>Eberly Avenue</h1> */}
           <h1 className='text-center text-4xl text-dark-blue'>
             Bowling Green, OHIO
           </h1>

@@ -1,7 +1,5 @@
 import { Montserrat, Lilita_One, Bebas_Neue } from 'next/font/google';
-import Link from 'next/link';
-import { fetchBands, fetchSchedule } from '@/lib/data';
-// import bandListPdf from '../../../../public/';
+import { fetchSchedule } from '@/lib/data';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });

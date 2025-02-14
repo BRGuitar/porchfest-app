@@ -47,7 +47,7 @@ export default function NavBar() {
             <Image
               src={porchfestLogo}
               className='h-14 w-14'
-              alt='porchfest logo'
+              alt='Porchfest logo'
             ></Image>
           </Link>
           <Link

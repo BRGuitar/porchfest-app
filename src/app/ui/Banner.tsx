@@ -14,7 +14,7 @@ export default function Banner() {
         <Link href='/home/about' className={linkStyle()}>
           <Image
             className='rounded-sm border-2 border-white'
-            alt='Bands'
+            alt='Freight Street Band'
             src='/freightstreet.jpeg'
             height={250}
             width={250}
@@ -25,7 +25,7 @@ export default function Banner() {
         <Link href='/home/map' className={'mx-12 ' + linkStyle()}>
           <Image
             className='rounded-sm border-2 border-white'
-            alt='Bands'
+            alt='2024 Porchfest Map Thumbnail'
             src='/PorchfestMap_Small.png'
             height={250}
             width={250}
@@ -36,7 +36,7 @@ export default function Banner() {
         <Link href='/home/schedule' className={linkStyle()}>
           <Image
             className='rounded-sm border-2 border-white'
-            alt='Bands'
+            alt='2024 Porchfest Crowd'
             src='/lineup.png'
             height={250}
             width={250}

@@ -22,11 +22,6 @@ export default async function Schedule() {
           <div className='flex flex-col items-center text-6xl'>
             <table className='w-full table-fixed border-separate border-spacing-x-0 border-spacing-y-8 rounded-t-xl bg-white bg-opacity-90 px-4 pb-4'>
               <tbody>
-                {/* <tr className='bg-base-orange text-xl'>
-                  <th className='p-1'></th>
-                  <th className='w-3/4 p-1'></th>
-                  <th className='p-1'></th>
-                </tr> */}
                 <tr className='text-xl text-black'>
                   <td className='p-1'>Set Start Time</td>
                   <td className='w-3/4 p-1 text-center'>Band & Location</td>
