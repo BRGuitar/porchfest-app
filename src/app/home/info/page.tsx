@@ -1,9 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import { Lilita_One } from 'next/font/google';
-import { Bebas_Neue } from 'next/font/google';
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function Info() {
@@ -38,8 +36,7 @@ export default function Info() {
               today within a quarter-mile radius of its original location. The
               event is open to everybody and free to attend, with complimentary
               parking and no admission fee. However, we kindly encourage you to
-              consider tipping the bands, as they do not receive any other form
-              of compensation for their participation.
+              consider tipping the bands.
             </div>
             <div
               className={

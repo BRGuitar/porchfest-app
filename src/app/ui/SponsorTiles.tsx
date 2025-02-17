@@ -1,6 +1,9 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Lilita_One } from 'next/font/google';
+
+const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function SponsorTiles() {
   const logoStyles = clsx('hover:scale-105');
@@ -15,12 +18,20 @@ export default function SponsorTiles() {
     'Sunset Bistro',
   ];
   return (
-    <div className='flex flex-col bg-dark-blue py-6'>
-      <div id='Platinum-Sponsors' className='flex flex-col pb-6'>
-        <h5 className='w-full px-4 py-2 text-center text-4xl'>
+    <div className='flex flex-col bg-dark-blue py-8'>
+      <div id='Platinum-Sponsors' className='flex flex-col items-center pb-6'>
+        <h5 className='w-11/12 rounded-xl border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
           Thank you, Sponsors!
         </h5>
-        <div className='flex flex-row justify-center pt-8'>
+        <div
+          className={
+            lilita.className +
+            ' my-6 w-fit border-b-4 px-2 text-center text-2xl text-white'
+          }
+        >
+          GOLD
+        </div>
+        <div className='flex flex-row justify-center'>
           <Link
             href='https://brewinggreenohio.com/'
             target='_blank'
@@ -75,7 +86,15 @@ export default function SponsorTiles() {
           </Link>
         </div>
       </div>
-      <div id='Gold-Sponsors' className='flex flex-col'>
+      <div id='Gold-Sponsors' className='flex flex-col items-center'>
+        <div
+          className={
+            lilita.className +
+            ' my-4 w-fit border-b-4 px-2 text-center text-xl text-white'
+          }
+        >
+          SILVER
+        </div>
         <div className='flex flex-row justify-center py-2'>
           <Link
             href='https://www.votejeffdennis.com/'
@@ -131,13 +150,24 @@ export default function SponsorTiles() {
           </Link>
         </div>
       </div>
-      <div id='Silver-Sponsors' className='w-full pt-4'>
+      <div
+        id='Silver-Sponsors'
+        className='flex w-full flex-col items-center pt-4'
+      >
+        <div
+          className={
+            lilita.className +
+            ' my-2 w-fit border-b-4 px-2 text-center text-lg text-white'
+          }
+        >
+          BRONZE
+        </div>
         <div className='flex flex-row flex-wrap justify-center'>
           {silverSponsors.map((sponsor, index) => {
             return (
               <span
                 key={index}
-                className='mx-2 my-1 text-center text-xl text-white underline decoration-gray-500'
+                className='mx-2 my-1 text-center text-xl text-white'
               >
                 {sponsor}
               </span>

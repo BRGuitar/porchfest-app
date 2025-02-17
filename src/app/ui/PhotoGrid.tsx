@@ -1,7 +1,10 @@
 'use client';
-import { Gallery } from 'react-grid-gallery';
+import { Gallery, Image } from 'react-grid-gallery';
 
 export default function PhotoGrid() {
+  const handleSelect = (index: number, item: Image) => {
+    window.open(item.src, '_blank');
+  };
   const images = [
     {
       src: '/grid/RamblinRhythm.jpg',
@@ -15,11 +18,6 @@ export default function PhotoGrid() {
       src: '/grid/crowd.jpg',
       width: 320,
       height: 320,
-      customOverlay: (
-        <div className='bg-white p-2 text-black opacity-75'>
-          Porchfest Crowd
-        </div>
-      ),
     },
     {
       src: '/grid/JoeBakerBand.jpg',
@@ -85,33 +83,31 @@ export default function PhotoGrid() {
       ),
     },
     {
-      src: '/grid/Bassist.jpg',
+      src: '/grid/JoeBakerBand_Bassist.jpg',
       width: 200,
       height: 133,
       customOverlay: (
-        <div className='bg-white p-2 text-black opacity-75'>Bassist</div>
+        <div className='bg-white p-2 text-black opacity-75'>Joe Baker Band</div>
       ),
     },
   ];
   return (
     <div className='bg-white'>
-      {/* <div className=' mb-2 w-full border-b-2 border-base-orange px-4 pt-6 text-5xl text-dark-blue'>
-        2024 Porchfest Gallery
-      </div> */}
       <div className='hidden px-6 pt-2 max-[1136px]:block'>
         <Gallery
           rowHeight={320}
           margin={12}
           enableImageSelection={false}
           images={images}
+          onClick={handleSelect}
         />
       </div>
       <div className='hidden px-6 pt-2 min-[1137px]:block min-[1440px]:hidden'>
         <Gallery
           rowHeight={420}
           margin={12}
-          enableImageSelection={false}
           images={images}
+          onClick={handleSelect}
         />
       </div>
       <div className='hidden px-6 pt-2 min-[1440px]:block min-[1728px]:hidden'>
@@ -120,14 +116,16 @@ export default function PhotoGrid() {
           margin={16}
           enableImageSelection={false}
           images={images}
+          onClick={handleSelect}
         />
       </div>
       <div className='hidden px-6 pt-2 min-[1728px]:block'>
         <Gallery
           rowHeight={400}
           margin={16}
-          enableImageSelection={false}
           images={images}
+          enableImageSelection={false}
+          onClick={handleSelect}
         />
       </div>
       <div className='w-full px-10 pb-2 text-end text-lg text-dark-blue lg:text-2xl'>

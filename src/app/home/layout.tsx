@@ -18,7 +18,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className='flex h-1 bg-base-orange'></div>
             <div className='flex h-1 bg-white'></div>
             <div className='flex justify-center'>{children}</div>
-            <div className='flex h-2 bg-white'></div>
             <SponsorTiles />
             <div className='flex min-h-28 flex-col items-center justify-center bg-white p-6 text-lg text-dark-blue'>
               <Link
