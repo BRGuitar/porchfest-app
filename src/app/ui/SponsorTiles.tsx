@@ -20,7 +20,7 @@ export default function SponsorTiles() {
   return (
     <div className='flex flex-col bg-dark-blue py-8'>
       <div id='Platinum-Sponsors' className='flex flex-col items-center pb-6'>
-        <h5 className='w-11/12 rounded-xl border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
+        <h5 className='w-11/12 rounded-sm border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
           Thank you, Sponsors!
         </h5>
         <div
