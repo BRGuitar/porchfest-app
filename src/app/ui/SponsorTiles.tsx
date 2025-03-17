@@ -95,7 +95,7 @@ export default function SponsorTiles() {
         >
           GOLD
         </div>
-        <div className='flex flex-row justify-center py-2'>
+        <div className='flex flex-row items-center justify-center py-2'>
           <Link
             href='https://www.votejeffdennis.com/'
             target='_blank'
@@ -123,6 +123,19 @@ export default function SponsorTiles() {
             />
           </Link>
           <Link
+            href='https://www.bgsu.edu/musical-arts.html'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='mx-2 rounded-md border border-white bg-white'
+              alt='BGSU College of Musical Arts logo'
+              src='/Sponsors/bgsu-musical-arts.png'
+              height={55}
+              width={55}
+            />
+          </Link>
+          <Link
             href='https://www.civista.bank/locations/bowling-green'
             target='_blank'
             className={logoStyles}
@@ -136,14 +149,14 @@ export default function SponsorTiles() {
             />
           </Link>
           <Link
-            href='https://www.bgsu.edu/musical-arts.html'
+            href='https://www.pagliaisbg.com/'
             target='_blank'
             className={logoStyles}
           >
             <Image
-              className='mx-2 rounded-md border border-white bg-white'
-              alt='BGSU College of Musical Arts logo'
-              src='/Sponsors/bgsu-musical-arts.png'
+              className='mx-2 rounded-md bg-white p-1'
+              alt='Pagliais Pizza logo'
+              src='/Sponsors/pagliais.png'
               height={55}
               width={55}
             />
