@@ -17,7 +17,7 @@ export default async function About() {
         >
           <div className='flex h-full w-full flex-col items-center justify-center bg-white opacity-85'>
             <h1 className='text-center text-8xl text-dark-blue'>
-              2024 Band List
+              2025 Band List
             </h1>
             <h1 className='text-center text-xl text-dark-blue'>
               (Click on a Band for more info)

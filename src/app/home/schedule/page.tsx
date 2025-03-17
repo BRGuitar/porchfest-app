@@ -12,9 +12,9 @@ export default async function Schedule() {
           className='flex h-72 w-full flex-row justify-center bg-white'
         >
           <div className='flex h-full w-full flex-col items-center justify-center bg-white opacity-85'>
-            <h1 className='text-center text-8xl text-dark-blue'>2024 Lineup</h1>
+            <h1 className='text-center text-8xl text-dark-blue'>2025 Lineup</h1>
             <h1 className='text-center text-4xl text-dark-blue'>
-              Saturday, June 8th
+              Saturday, May 31st
             </h1>
           </div>
         </div>

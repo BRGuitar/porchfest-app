@@ -29,7 +29,7 @@ export default function SponsorTiles() {
             ' my-6 w-fit border-b-4 px-2 text-center text-2xl text-white'
           }
         >
-          GOLD
+          PLATINUM
         </div>
         <div className='flex flex-row justify-center'>
           <Link
@@ -93,7 +93,7 @@ export default function SponsorTiles() {
             ' my-4 w-fit border-b-4 px-2 text-center text-xl text-white'
           }
         >
-          SILVER
+          GOLD
         </div>
         <div className='flex flex-row justify-center py-2'>
           <Link
@@ -160,7 +160,7 @@ export default function SponsorTiles() {
             ' my-2 w-fit border-b-4 px-2 text-center text-lg text-white'
           }
         >
-          BRONZE
+          SILVER
         </div>
         <div className='flex flex-row flex-wrap justify-center'>
           {silverSponsors.map((sponsor, index) => {

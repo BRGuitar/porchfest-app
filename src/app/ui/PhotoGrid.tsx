@@ -1,4 +1,5 @@
 'use client';
+
 import { Gallery, Image } from 'react-grid-gallery';
 
 export default function PhotoGrid() {

@@ -3,6 +3,7 @@
 import '../globals.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+//import { Bowlby_One_SC } from 'next/font/google';
 import { Lilita_One } from 'next/font/google';
 import clsx from 'clsx';
 import Image from 'next/image';
