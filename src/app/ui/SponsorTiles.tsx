@@ -8,14 +8,23 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function SponsorTiles() {
   const logoStyles = clsx('hover:scale-105');
   const silverSponsors = [
+    'ARL',
     "Arlyn's Good Beer",
-    'Jim Palmer Excavating',
     'BGAC',
-    'Wood County Insurance',
-    'Wilson Myers House',
     'Bob Midden',
+    'Downtown / Wallys',
+    'Grounds for Thought',
+    'Home Depot',
+    'Howards',
+    'Jim Palmer Excavating',
+    'Phipps Shevlin Hebeka Dentistry',
+    'Reggie Hanneman',
     'Rotary',
+    'Scott & Ginny Stewart',
     'Sunset Bistro',
+    'Tom Gorman',
+    'Wilson Myers House',
+    'Wood County Insurance',
   ];
   return (
     <div className='flex flex-col bg-dark-blue py-8'>
@@ -165,7 +174,7 @@ export default function SponsorTiles() {
       </div>
       <div
         id='Silver-Sponsors'
-        className='flex w-full flex-col items-center pt-4'
+        className='flex w-full flex-col items-center px-4 pt-4'
       >
         <div
           className={
