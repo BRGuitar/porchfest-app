@@ -23,7 +23,10 @@ export default function Banner() {
           <div className='h-5 p-1 text-xl'>2025</div>
           <div className='p-1 text-4xl lg:text-5xl'>Band List</div>
         </Link>
-        <Link href='/home/map' className={'ml-6 ' + linkStyle()}>
+        <Link
+          href='/home/map'
+          className={'ml-6 lg:ml-10 xl:ml-16 ' + linkStyle()}
+        >
           <Image
             className='rounded-sm border-2 border-white'
             alt='2025 Porchfest Map Thumbnail'
@@ -34,7 +37,10 @@ export default function Banner() {
           <div className='h-5 p-1 text-xl'>2025</div>
           <div className='p-1 text-4xl lg:text-5xl'>Porch Map</div>
         </Link>
-        <Link href='/home/schedule' className={'mx-6 ' + linkStyle()}>
+        <Link
+          href='/home/schedule'
+          className={'mx-6 lg:mx-10 xl:mx-16 ' + linkStyle()}
+        >
           <Image
             className='rounded-sm border-2 border-white'
             alt='2024 Porchfest Crowd'

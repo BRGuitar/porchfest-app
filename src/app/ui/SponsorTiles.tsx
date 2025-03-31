@@ -18,7 +18,7 @@ export default function SponsorTiles() {
     'Howards',
     'Jim Palmer Excavating',
     'Phipps Shevlin Hebeka Dentistry',
-    'Reggie Hanneman',
+    'Deck-Hanneman Funeral Home',
     'Rotary',
     'Scott & Ginny Stewart',
     'Sunset Bistro',
@@ -129,6 +129,19 @@ export default function SponsorTiles() {
               src='/Sponsors/juniper.png'
               height={20}
               width={120}
+            />
+          </Link>
+          <Link
+            href='https://www.pisanellos.com/'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='mx-2 rounded-md bg-white p-1'
+              alt='Pisanellos Pizza logo'
+              src='/Sponsors/pisanellos.png'
+              height={20}
+              width={100}
             />
           </Link>
           <Link
