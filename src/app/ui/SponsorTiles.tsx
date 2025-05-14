@@ -15,7 +15,6 @@ export default function SponsorTiles() {
     'BG Pedal Co.',
     'Bob Midden',
     'Deck-Hanneman Funeral Home',
-    'Downtown / Wallys',
     'Grounds for Thought',
     'Home Depot',
     'Howards Club H',
