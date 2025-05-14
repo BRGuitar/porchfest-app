@@ -8,22 +8,24 @@ const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 export default function SponsorTiles() {
   const logoStyles = clsx('hover:scale-105');
   const silverSponsors = [
+    'Amy Karlovek',
     'ARL',
     "Arlyn's Good Beer",
-    'BGAC',
+    'BG Arts Council',
+    'BG Pedal Co.',
     'Bob Midden',
+    'Deck-Hanneman Funeral Home',
     'Downtown / Wallys',
     'Grounds for Thought',
     'Home Depot',
-    'Howards',
+    'Howards Club H',
     'Jim Palmer Excavating',
     'Phipps Shevlin Hebeka Dentistry',
-    'Deck-Hanneman Funeral Home',
-    'Rotary',
+    'Rotary of BG',
     'Scott & Ginny Stewart',
     'Sunset Bistro',
     'Tom Gorman',
-    'Wilson Myers House',
+    'Wilson-Myers House',
     'Wood County Insurance',
   ];
   return (
