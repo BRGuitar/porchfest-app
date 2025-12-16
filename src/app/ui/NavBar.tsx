@@ -59,7 +59,7 @@ export default function NavBar() {
             }
           >
             <span className='px-1 text-4xl'>PORCHFEST</span>
-            <span className='px-1 text-xl'> | MAY 31, 2025</span>
+            <span className='px-1 text-xl'> | MAY 30, 2026</span>
           </Link>
         </div>
         <div className='hidden px-8 lg:block lg:text-white'>
