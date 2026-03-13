@@ -33,7 +33,7 @@ export default function Map() {
               src={mapImg}
               className='m-auto rounded-2xl px-4 py-2'
               quality={100}
-              alt='2025 Porchfest Map'
+              alt='2026 Porchfest Map'
             />
           </Link>
         </div>

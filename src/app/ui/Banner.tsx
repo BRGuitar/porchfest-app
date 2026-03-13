@@ -20,7 +20,7 @@ export default function Banner() {
             height={200}
             width={200}
           />
-          <div className='h-5 p-1 text-xl'>2025</div>
+          <div className='h-5 p-1 text-xl'>2026</div>
           <div className='p-1 text-4xl lg:text-5xl'>Band List</div>
         </Link>
         <Link
@@ -29,7 +29,7 @@ export default function Banner() {
         >
           <Image
             className='rounded-sm border-2 border-white'
-            alt='2025 Porchfest Map Thumbnail'
+            alt='2026 Porchfest Map Thumbnail'
             src='/PorchfestMap_Small.png'
             height={200}
             width={200}
@@ -48,7 +48,7 @@ export default function Banner() {
             height={200}
             width={200}
           />
-          <div className='h-5 p-1 text-xl'>2025</div>
+          <div className='h-5 p-1 text-xl'>2026</div>
           <div className='p-1 text-4xl lg:text-5xl'>Schedule</div>
         </Link>
         <Link href={posterImg.src} target='_blank' className={linkStyle()}>

@@ -130,7 +130,7 @@ export default function PhotoGrid() {
         />
       </div>
       <div className='w-full px-10 pb-2 text-end text-lg text-dark-blue lg:text-2xl'>
-        2024 Porchfest Photos courtesy of BG FALCON MEDIA
+        Porchfest Photos courtesy of BG FALCON MEDIA
       </div>
     </div>
   );
