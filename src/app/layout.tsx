@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Bebas_Neue, Lilita_One } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   description: "Home for Bowling Green's Live Music Scene",
 };
 
+export const viewport: Viewport = {
+  width: '780',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <head>
-        <meta name='viewport' content='width=780' />
-      </head>
+      <head></head>
       <body className={bebas.className}>
         {children}
         <Analytics />
