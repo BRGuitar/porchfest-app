@@ -20,7 +20,7 @@ export default function Map() {
         >
           <div className='flex h-full w-full flex-col items-center justify-center bg-white opacity-85'>
             <h1 className='text-center text-8xl text-dark-blue'>
-              2025 Official Map
+              2026 Official Map
             </h1>
             <h1 className='text-center text-2xl text-dark-blue'>
               (Eberly Avenue and the surrounding area)

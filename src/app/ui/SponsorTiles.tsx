@@ -9,65 +9,37 @@ export default function SponsorTiles() {
   const logoStyles = clsx('hover:scale-105');
   const silverSponsors = [
     'Amy Karlovek',
-    'ARL',
     "Arlyn's Good Beer",
-    'BG Arts Council',
+    'BGAC',
     'BG Pedal Co.',
+    'BGSU Music',
     'Bob Midden',
-    'Deck-Hanneman Funeral Home',
-    'Grounds for Thought',
+    'Dunn Funeral',
     'Home Depot',
-    'Howards Club H',
+    'Howard\'s Club H',
     'Jim Palmer Excavating',
-    'Phipps Shevlin Hebeka Dentistry',
-    'Rotary of BG',
-    'Scott & Ginny Stewart',
-    'Sunset Bistro',
-    'Tom Gorman',
+    'Juniper Brewing Co.',
+    'Pete & Kristi',
+    'Snook\'s Dream Cars',
     'Wilson-Myers House',
     'Wood County Insurance',
+    'Ziggy\'s',
   ];
   return (
     <div className='flex flex-col bg-dark-blue py-8'>
-      <div id='Platinum-Sponsors' className='flex flex-col items-center pb-6'>
+      <div id='Platinum-Sponsors' className='flex flex-col items-center pb-2'>
         <h5 className='w-11/12 rounded-sm border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
           Thank you, Sponsors!
         </h5>
         <div
           className={
             lilita.className +
-            ' my-6 w-fit border-b-4 px-2 text-center text-2xl text-white'
+            ' mb-4 mt-6 w-fit px-2 text-center text-3xl text-white'
           }
         >
-          PLATINUM
+          DIAMOND
         </div>
         <div className='flex flex-row justify-center'>
-          <Link
-            href='https://brewinggreenohio.com/'
-            target='_blank'
-            className={logoStyles}
-          >
-            <Image
-              className='px-2'
-              alt='Brewing Green logo'
-              src='/Sponsors/brewing-green.png'
-              height={180}
-              width={180}
-            />
-          </Link>
-          <Link
-            href='https://www.forkeepsgifts.com/'
-            target='_blank'
-            className={logoStyles}
-          >
-            <Image
-              className='mx-2 rounded-md bg-white px-3 py-1 lg:mx-6'
-              alt='For Keeps logo'
-              src='/Sponsors/for-keeps.jpeg'
-              height={160}
-              width={160}
-            />
-          </Link>
           <Link
             href='https://visitbgohio.org/'
             target='_blank'
@@ -77,8 +49,46 @@ export default function SponsorTiles() {
               className='mx-2 rounded-md lg:mx-6'
               alt='Visit BG logo'
               src='/Sponsors/visit-bg.png'
-              height={140}
-              width={190}
+              height={150}
+              width={200}
+            />
+          </Link>
+        </div>
+      </div>
+      <div id='Platinum-Sponsors' className='flex flex-col items-center pb-2'>
+        <div
+          className={
+            lilita.className +
+            ' mt-6 mb-2 w-fit px-2 text-center text-2xl text-white'
+          }
+        >
+          PLATINUM
+        </div>
+        <div className='flex flex-row justify-center'>
+          <Link
+            href='https://www.forkeepsgifts.com/'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='mx-2 rounded-md bg-white px-3 py-1 lg:mx-6'
+              alt='For Keeps logo'
+              src='/Sponsors/for-keeps.jpeg'
+              height={120}
+              width={120}
+            />
+          </Link>
+          <Link
+            href='https://www.groundsforthought.com/'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='px-2'
+              alt='Grounds For Thought logo'
+              src='/Sponsors/grounds-for-thought.png'
+              height={130}
+              width={130}
             />
           </Link>
           <Link
@@ -90,8 +100,8 @@ export default function SponsorTiles() {
               className='mx-2 rounded-md bg-white px-1 py-1 lg:mx-6'
               alt='Newlove Realty logo'
               src='/Sponsors/newlove.png'
-              height={140}
-              width={200}
+              height={100}
+              width={140}
             />
           </Link>
         </div>
@@ -100,7 +110,7 @@ export default function SponsorTiles() {
         <div
           className={
             lilita.className +
-            ' my-4 w-fit border-b-4 px-2 text-center text-xl text-white'
+            ' mt-4 w-fit px-2 text-center text-xl text-white'
           }
         >
           GOLD
@@ -120,6 +130,44 @@ export default function SponsorTiles() {
             />
           </Link>
           <Link
+            href='/home/about/tomgorman'
+            className={logoStyles}
+          >
+            <Image
+              className='mx-2 rounded-md'
+              alt='Tom Gorman picture'
+              src='/bands/tomgorman.png'
+              height={20}
+              width={90}
+            />
+          </Link>
+          <Link
+            href='https://brewinggreenohio.com/'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='px-2'
+              alt='Brewing Green logo'
+              src='/Sponsors/brewing-green.png'
+              height={90}
+              width={90}
+            />
+          </Link>
+          <Link
+            href='https://www.rotarybg.org/'
+            target='_blank'
+            className={logoStyles}
+          >
+            <Image
+              className='mx-2 rounded-md bg-white p-1'
+              alt='Rotary logo'
+              src='/Sponsors/rotary.png'
+              height={25}
+              width={120}
+            />
+          </Link>
+          {/* <Link
             href='https://www.juniperbrew.com/'
             target='_blank'
             className={logoStyles}
@@ -131,7 +179,7 @@ export default function SponsorTiles() {
               height={20}
               width={120}
             />
-          </Link>
+          </Link> */}
           <Link
             href='https://www.pisanellos.com/'
             target='_blank'
@@ -145,7 +193,7 @@ export default function SponsorTiles() {
               width={100}
             />
           </Link>
-          <Link
+          {/* <Link
             href='https://www.bgsu.edu/musical-arts.html'
             target='_blank'
             className={logoStyles}
@@ -157,7 +205,7 @@ export default function SponsorTiles() {
               height={55}
               width={55}
             />
-          </Link>
+          </Link> */}
           <Link
             href='https://www.civista.bank/locations/bowling-green'
             target='_blank'
@@ -171,7 +219,7 @@ export default function SponsorTiles() {
               width={160}
             />
           </Link>
-          <Link
+          {/* <Link
             href='https://www.pagliaisbg.com/'
             target='_blank'
             className={logoStyles}
@@ -183,7 +231,7 @@ export default function SponsorTiles() {
               height={55}
               width={55}
             />
-          </Link>
+          </Link> */}
         </div>
       </div>
       <div
@@ -193,7 +241,7 @@ export default function SponsorTiles() {
         <div
           className={
             lilita.className +
-            ' my-2 w-fit border-b-4 px-2 text-center text-lg text-white'
+            ' mt-2 w-fit px-2 text-center text-lg text-white'
           }
         >
           SILVER
