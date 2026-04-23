@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import posterImg from '../../../public/2025_Poster.png';
+import posterImg from '../../../public/2026_Poster.png';
 
 export default function Banner() {
   const linkStyle = () =>
@@ -54,12 +54,12 @@ export default function Banner() {
         <Link href={posterImg.src} target='_blank' className={linkStyle()}>
           <Image
             className='rounded-sm border-2 border-white'
-            alt='2025 Porchfest Poster'
-            src='/2025_Poster_Preview.png'
+            alt='2026 Porchfest Poster'
+            src='/2026_Poster_Preview.png'
             height={200}
             width={200}
           />
-          <div className='h-5 p-1 text-xl'>2025</div>
+          <div className='h-5 p-1 text-xl'>2026</div>
           <div className='p-1 text-4xl lg:text-5xl'>Poster</div>
         </Link>
       </div>
