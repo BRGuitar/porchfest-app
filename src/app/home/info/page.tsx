@@ -118,7 +118,7 @@ export default function Info() {
             <div className='w-5/6 rounded-lg p-2 pt-0 text-center text-black'>
               Want to perform at BG Porchfest? 
               We are looking for a diverse lineup of solo acoustic acts, duos, and full bands across all genres 
-              to play for tips on neighçborhood porches. If you would like to be considered for this year’s schedule, 
+              to play for tips on neighborhood porches. If you would like to be considered for this year’s schedule, 
               please fill out our online&nbsp;
               <a
                 href='https://docs.google.com/forms/d/e/1FAIpQLSeumjFigLLXeVeLPkxTlj-It2ggyuXrvk6IXQInXRjve0YTnQ/viewform?pli=1'
