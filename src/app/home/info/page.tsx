@@ -105,6 +105,31 @@ export default function Info() {
               participation, as it is your enthusiasm and support that truly
               make this a cherished community event.
             </div>
+
+            <div
+              className={
+                lilita.className +
+                ' mb-2 mt-8 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+              }
+            >
+              BAND APPLICATION
+            </div>
+
+            <div className='w-5/6 rounded-lg p-2 pt-0 text-center text-black'>
+              Want to perform at BG Porchfest? 
+              We are looking for a diverse lineup of solo acoustic acts, duos, and full bands across all genres 
+              to play for tips on neighçborhood porches. If you would like to be considered for this year’s schedule, 
+              please fill out our online&nbsp;
+              <a
+                href='https://docs.google.com/forms/d/e/1FAIpQLSeumjFigLLXeVeLPkxTlj-It2ggyuXrvk6IXQInXRjve0YTnQ/viewform?pli=1'
+                target='_blank'
+                className=' underline'
+              >
+                Band Application Form
+              </a>. Space is limited, and we will follow up with 
+              selected performers once the lineup is finalized.
+            </div>
+
             <div className='w-5/6 rounded-lg p-2 pt-8 text-center text-black'>
               We look forward to seeing you all this year!
             </div>
