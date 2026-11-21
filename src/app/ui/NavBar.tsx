@@ -1,7 +1,7 @@
 'use client';
 
 import '../globals.css';
-import Link from 'next/link';
+import Link, { useLinkStatus } from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Lilita_One } from 'next/font/google';
 import clsx from 'clsx';
@@ -9,6 +9,17 @@ import Image from 'next/image';
 import porchfestLogo from '../../../public/PorchFest_Logo.png';
 
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
+
+// Must render inside a <Link>. Pulses the label from the moment it's clicked
+// until the new page is ready, so a slow load never looks like a dead click.
+function NavLabel({ children }: { children: React.ReactNode }) {
+  const { pending } = useLinkStatus();
+  return (
+    <span className={clsx(pending && 'animate-pulse opacity-60')}>
+      {children}
+    </span>
+  );
+}
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -54,19 +65,19 @@ export default function NavBar() {
         </div>
         <div className='hidden px-8 lg:block lg:text-white'>
           <Link href='/home' className={linkStyle('/home$')}>
-            Home
+            <NavLabel>Home</NavLabel>
           </Link>
           <Link href='/home/schedule' className={linkStyle('/home/schedule')}>
-            Schedule
+            <NavLabel>Schedule</NavLabel>
           </Link>
           <Link href='/home/map' className={linkStyle('/home/map')}>
-            Map
+            <NavLabel>Map</NavLabel>
           </Link>
           <Link href='/home/about' className={linkStyle('/home/about')}>
-            The Bands
+            <NavLabel>The Bands</NavLabel>
           </Link>
           <Link href='/home/info' className={linkStyle('/home/info')}>
-            More Info
+            <NavLabel>More Info</NavLabel>
           </Link>
         </div>
       </div>
@@ -75,22 +86,22 @@ export default function NavBar() {
           href='/home/schedule'
           className={'mx-1 ' + hamburgerLinkStyle('/home/schedule')}
         >
-          Schedule
+          <NavLabel>Schedule</NavLabel>
         </Link>
         <Link
           href='/home/map'
           className={'mr-1 ' + hamburgerLinkStyle('/home/map')}
         >
-          Map
+          <NavLabel>Map</NavLabel>
         </Link>
         <Link href='/home/about' className={hamburgerLinkStyle('/home/about')}>
-          The Bands
+          <NavLabel>The Bands</NavLabel>
         </Link>
         <Link
           href='/home/info'
           className={'mx-1 ' + hamburgerLinkStyle('/home/info')}
         >
-          More Info
+          <NavLabel>More Info</NavLabel>
         </Link>
       </div>
     </div>

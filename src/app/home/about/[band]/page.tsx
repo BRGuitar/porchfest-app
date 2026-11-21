@@ -1,7 +1,17 @@
 import ImageContainer from '@/app/ui/ImageContainer';
 import { Montserrat, Bebas_Neue } from 'next/font/google';
 import Link from 'next/link';
-import { fetchBandByPageLink } from '@/lib/data';
+import { fetchBandByPageLink, fetchBands } from '@/lib/data';
+
+// Served from cache; refreshed on every admin edit (see lib/data.ts) and at
+// most 60s after any other database change.
+export const revalidate = 60;
+
+// Pre-build every band page; bands added later are built on first visit.
+export async function generateStaticParams() {
+  const bands = await fetchBands();
+  return bands.filter((b) => b.pagelink).map((b) => ({ band: b.pagelink }));
+}
 
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });

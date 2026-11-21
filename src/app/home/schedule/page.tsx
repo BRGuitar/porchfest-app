@@ -2,6 +2,10 @@ import ScheduleCards from '../../ui/Schedule';
 import { fetchSchedule } from '@/lib/data';
 import '../../globals.css';
 
+// Served from cache; refreshed on every admin edit (see lib/data.ts) and at
+// most 60s after any other database change.
+export const revalidate = 60;
+
 export default async function Schedule() {
   const schedule = await fetchSchedule();
   return (

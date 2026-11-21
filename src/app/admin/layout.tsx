@@ -1,5 +1,8 @@
 import { Bebas_Neue } from 'next/font/google';
 
+// Admin pages always read live data (public pages are cached).
+export const dynamic = 'force-dynamic';
+
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

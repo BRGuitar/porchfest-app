@@ -1,4 +1,9 @@
+import Link from 'next/link';
 import { fetchSchedule } from '@/lib/data';
+
+// Served from cache; refreshed on every admin edit (see lib/data.ts) and at
+// most 60s after any other database change.
+export const revalidate = 60;
 
 export default async function About() {
   const bandsOnSchedule = await fetchSchedule();
@@ -23,13 +28,13 @@ export default async function About() {
           <div className='flex flex-row flex-wrap justify-center rounded-2xl py-6 text-xl'>
             {bandsOnSchedule.map((x, index) => {
               return x.pagelink !== null ? (
-                <a
+                <Link
                   key={index}
                   className='m-2 flex w-fit flex-col justify-center rounded-xl border border-white bg-dark-blue p-4 px-6 text-center text-white hover:bg-base-orange hover:text-white'
                   href={'/home/about/' + x.pagelink}
                 >
                   {x.band}
-                </a>
+                </Link>
               ) : (
                 <div
                   key={index}
@@ -38,15 +43,6 @@ export default async function About() {
                   {x.band}
                 </div>
               );
-              // <a
-              //   href={'/home/about'}
-              //   target='_blank'
-              //   rel='noopener noreferrer'
-              //   key={index}
-              //   className='m-2 flex w-1/4 flex-col justify-center rounded-xl border border-white bg-white p-1 text-center text-dark-blue hover:bg-base-orange hover:text-white'
-              // >
-              //   <div className=''>{x.band}</div>
-              // </a>
             })}
           </div>
         </div>

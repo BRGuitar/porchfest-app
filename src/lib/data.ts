@@ -1,13 +1,18 @@
 import 'server-only';
-import { connection } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { sql } from './db';
 import { Band, Performance } from './definitions';
 
-// Public pages read live data on every request so admin edits show up
-// immediately. `connection()` opts the calling route out of static rendering.
+// Caching: public pages are statically cached (ISR, see `revalidate` in each
+// page) so visitors don't wait on the database. Every write below calls
+// `refreshPublicPages()` so admin edits show up immediately. Admin pages are
+// always rendered fresh (`dynamic = 'force-dynamic'` in admin/layout.tsx).
+
+function refreshPublicPages() {
+  revalidatePath('/home', 'layout');
+}
 
 export async function fetchSchedule() {
-  await connection();
   try {
     return (await sql`SELECT * FROM schedule ORDER BY starttime ASC`) as Performance[];
   } catch (error) {
@@ -17,7 +22,6 @@ export async function fetchSchedule() {
 }
 
 export async function fetchPerformanceById(performanceId: string) {
-  await connection();
   try {
     return (await sql`SELECT * FROM schedule WHERE id = ${performanceId}`) as Performance[];
   } catch (error) {
@@ -27,7 +31,6 @@ export async function fetchPerformanceById(performanceId: string) {
 }
 
 export async function fetchBands() {
-  await connection();
   try {
     return (await sql`SELECT * FROM bands ORDER BY name ASC`) as Band[];
   } catch (error) {
@@ -37,7 +40,6 @@ export async function fetchBands() {
 }
 
 export async function fetchBandById(bandId: string) {
-  await connection();
   try {
     return (await sql`SELECT * FROM bands WHERE id = ${bandId}`) as Band[];
   } catch (error) {
@@ -47,7 +49,6 @@ export async function fetchBandById(bandId: string) {
 }
 
 export async function fetchBandByPageLink(bandPageLink: string) {
-  await connection();
   try {
     return (await sql`SELECT * FROM bands WHERE pagelink = ${bandPageLink}`) as Band[];
   } catch (error) {
@@ -70,12 +71,14 @@ export async function addToSchedule(
     console.error('Database Error:', error);
     throw new Error('Failed to add to Schedule.');
   }
+  refreshPublicPages();
 }
 
 export async function deleteFromSchedule(id: string) {
   try {
     const rows =
       await sql`DELETE FROM schedule WHERE id = ${id} RETURNING band`;
+    refreshPublicPages();
     return rows[0]?.band as string | undefined;
   } catch (error) {
     console.error('Database Error:', error);
@@ -105,6 +108,7 @@ export async function addToBandList(
 export async function deleteFromBandList(id: string) {
   try {
     const rows = await sql`DELETE FROM bands WHERE id = ${id} RETURNING name`;
+    refreshPublicPages();
     return rows[0]?.name as string | undefined;
   } catch (error) {
     console.error('Database Error:', error);
@@ -148,10 +152,12 @@ export async function updatePerformanceFromSchedule(
     console.error('Database Error:', error);
     throw new Error('Failed to Update Performance from Schedule.');
   }
+  refreshPublicPages();
 }
 
 // schedule.band is matched to bands.name by string; keep the denormalized
 // schedule.pagelink in sync when a band is added or edited.
 async function updateSchedulePageLinks(bandName: string, pageLink: string) {
   await sql`UPDATE schedule SET pagelink = ${pageLink} WHERE band = ${bandName}`;
+  refreshPublicPages();
 }

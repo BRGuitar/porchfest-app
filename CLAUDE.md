@@ -21,7 +21,7 @@ npm run format:fix   # prettier (single quotes, JSX single quotes, tailwind clas
 
 There are no tests. To verify a change, run typecheck, lint and build, then `npm start` and load the pages. Admin forms write to the **live production database** (local dev uses the same DB), so don't submit them while testing unless the user asks.
 
-Dependabot (`.github/dependabot.yml`) opens grouped monthly dependency PRs.
+Dependencies are updated manually, typically once a year alongside the festival-date rollover. There is no Dependabot; the user decided against it for now.
 
 ## Layout
 
@@ -30,7 +30,9 @@ Dependabot (`.github/dependabot.yml`) opens grouped monthly dependency PRs.
 - `src/app/home/layout.tsx` has the NavBar, sponsor tiles, and footer on every public page.
 - `src/app/admin/*` holds the admin CRUD for the `schedule` and `bands` tables.
 - `src/app/ui/*` has the shared components and form components (forms use inline `'use server'` actions).
-- `src/lib/db.ts` holds the DB client (server-only). `src/lib/data.ts` has all DB reads and writes; reads call `connection()` so pages render dynamically. `src/lib/definitions.ts` has the `Band` and `Performance` types.
+- `src/lib/db.ts` holds the DB client (server-only). `src/lib/data.ts` has all DB reads and writes.
+- **Caching:** public DB-backed pages (`schedule`, `about`, `about/[band]`) are statically cached with `revalidate = 60`, and band pages are pre-built via `generateStaticParams`. Every write in `data.ts` must call `refreshPublicPages()` (`revalidatePath('/home', 'layout')`) so edits appear immediately. Admin pages are `force-dynamic` (set in `admin/layout.tsx`). `next build` queries the database to pre-render pages.
+- **Loading UX:** DB-backed routes have `loading.tsx` skeletons (`src/app/ui/LoadingSkeletons.tsx`), and NavBar labels pulse while navigation is pending (`useLinkStatus`). Use `<Link>`, not `<a>`, for internal links so prefetching works. `src/lib/definitions.ts` has the `Band` and `Performance` types.
 - `public/` holds static images: `bands/` (band photos referenced by `bands.imglink`), `Sponsors/`, `grid/` (home photo grid), plus the yearly poster and map.
 
 ## Data model (Postgres)
