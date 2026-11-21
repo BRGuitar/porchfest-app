@@ -29,10 +29,12 @@ export default function UpdateScheduleForm({
   endTime,
   location,
 }) {
-  let formattedEndTime = new Date(endTime - endTime.getTimezoneOffset() * 60000)
+  const formattedEndTime = new Date(
+    endTime - endTime.getTimezoneOffset() * 60000
+  )
     .toISOString()
     .slice(0, -5);
-  let formattedStartTime = new Date(
+  const formattedStartTime = new Date(
     startTime - startTime.getTimezoneOffset() * 60000
   )
     .toISOString()

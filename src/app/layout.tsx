@@ -1,10 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import { Bebas_Neue, Lilita_One } from 'next/font/google';
+import { Bebas_Neue } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
-const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'PorchFest',

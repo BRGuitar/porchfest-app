@@ -1,14 +1,7 @@
-import { Montserrat } from 'next/font/google';
-import { Lilita_One } from 'next/font/google';
-import { Bebas_Neue } from 'next/font/google';
 import mapImg from '../../../../public/PorchfestMap.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import '../../globals.css';
-
-const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
-const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 
 export default function Map() {
   return (

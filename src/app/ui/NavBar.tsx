@@ -3,20 +3,10 @@
 import '../globals.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-//import { Bowlby_One_SC } from 'next/font/google';
 import { Lilita_One } from 'next/font/google';
 import clsx from 'clsx';
 import Image from 'next/image';
 import porchfestLogo from '../../../public/PorchFest_Logo.png';
-
-// Map of links to display in the side navigation.
-// Depending on the size of the application, this would be stored in a database.
-const links = [
-  { name: 'Home', href: '/' },
-  { name: '2024 Schedule', href: '/schedule' },
-  { name: 'More Info', href: '/info' },
-  { name: 'About the Bands', href: '/about' },
-];
 
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
@@ -31,7 +21,7 @@ export default function NavBar() {
     );
   const hamburgerLinkStyle = (linkName: string) =>
     clsx(
-      'text-2xl w-1/4 rounded-t-lg border-2 border-white border-opacity-5 text-center pb-1 pt-2 text-white',
+      'text-2xl w-1/4 rounded-t-lg border-2 border-white/5 text-center pb-1 pt-2 text-white',
       {
         'bg-base-orange': pathname.match(linkName),
       }

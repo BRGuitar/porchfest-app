@@ -6,7 +6,7 @@ import Link from 'next/link';
 const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
 export default function Admin() {
-  var isLoggedIn = true;
+  const isLoggedIn = true;
 
   if (isLoggedIn) {
     return (

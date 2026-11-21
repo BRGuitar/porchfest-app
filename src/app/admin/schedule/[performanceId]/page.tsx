@@ -9,9 +9,10 @@ const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 export default async function EditSchedule({
   params,
 }: {
-  params: { performanceId: string };
+  params: Promise<{ performanceId: string }>;
 }) {
-  const performanceDetails = await fetchPerformanceById(params.performanceId);
+  const { performanceId } = await params;
+  const performanceDetails = await fetchPerformanceById(performanceId);
   let foundPerformance: Performance | undefined = undefined;
   if (performanceDetails.length > 0) {
     foundPerformance = performanceDetails[0];
@@ -25,7 +26,7 @@ export default async function EditSchedule({
         Back to Schedule
       </Link>
       <UpdateScheduleForm
-        id={params.performanceId}
+        id={performanceId}
         bandName={foundPerformance?.band}
         startTime={foundPerformance?.starttime}
         endTime={foundPerformance?.endtime}

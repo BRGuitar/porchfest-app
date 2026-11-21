@@ -1,14 +1,13 @@
 import '../globals.css';
 import { redirect } from 'next/navigation';
 import DeleteButton from './DeleteButton';
-import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import { deleteFromSchedule } from '@/lib/data';
 import EditScheduleButton from './EditScheduleButton';
 import { Lilita_One } from 'next/font/google';
+import { Performance } from '@/lib/definitions';
 
 const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
-const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 
 async function deleteRow(id: string) {
   'use server';
@@ -18,8 +17,14 @@ async function deleteRow(id: string) {
   redirect(`/admin/schedule`);
 }
 
-export default async function ScheduleCards({ adminMode, schedule }) {
-  return schedule.map((item: any, index) => {
+export default async function ScheduleCards({
+  adminMode,
+  schedule,
+}: {
+  adminMode: boolean;
+  schedule: Performance[];
+}) {
+  return schedule.map((item, index) => {
     return (
       <tr className={lilita.className} key={index}>
         <td className='border-b-4 border-black bg-white px-3 text-base text-dark-blue'>
@@ -30,7 +35,7 @@ export default async function ScheduleCards({ adminMode, schedule }) {
             <div className='text-lg'>PM</div>
           </div>
         </td>
-        <td className=' w-3/4 bg-white px-4 py-2 text-center text-4xl text-base-orange lg:text-5xl'>
+        <td className='w-3/4 bg-white px-4 py-2 text-center text-4xl text-base-orange lg:text-5xl'>
           <div className='flex flex-col text-dark-blue'>
             {item.pagelink !== null ? (
               <Link

@@ -16,25 +16,25 @@ export default function SponsorTiles() {
     'Bob Midden',
     'Dunn Funeral',
     'Home Depot',
-    'Howard\'s Club H',
+    "Howard's Club H",
     'Jim Palmer Excavating',
     'Juniper Brewing Co.',
     'Pete & Kristi',
-    'Snook\'s Dream Cars',
+    "Snook's Dream Cars",
     'Wilson-Myers House',
     'Wood County Insurance',
-    'Ziggy\'s',
+    "Ziggy's",
   ];
   return (
     <div className='flex flex-col bg-dark-blue py-8'>
       <div id='Platinum-Sponsors' className='flex flex-col items-center pb-2'>
-        <h5 className='w-11/12 rounded-sm border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
+        <h5 className='w-11/12 rounded-xs border-4 border-white bg-base-orange p-1 pt-2 text-center text-4xl text-white'>
           Thank you, Sponsors!
         </h5>
         <div
           className={
             lilita.className +
-            ' mb-4 mt-6 w-fit px-2 text-center text-3xl text-white'
+            ' mt-6 mb-4 w-fit px-2 text-center text-3xl text-white'
           }
         >
           DIAMOND
@@ -109,8 +109,7 @@ export default function SponsorTiles() {
       <div id='Gold-Sponsors' className='flex flex-col items-center'>
         <div
           className={
-            lilita.className +
-            ' mt-4 w-fit px-2 text-center text-xl text-white'
+            lilita.className + ' mt-4 w-fit px-2 text-center text-xl text-white'
           }
         >
           GOLD
@@ -129,10 +128,7 @@ export default function SponsorTiles() {
               width={85}
             />
           </Link>
-          <Link
-            href='/home/about/tomgorman'
-            className={logoStyles}
-          >
+          <Link href='/home/about/tomgorman' className={logoStyles}>
             <Image
               className='mx-2 rounded-md'
               alt='Tom Gorman picture'
@@ -240,8 +236,7 @@ export default function SponsorTiles() {
       >
         <div
           className={
-            lilita.className +
-            ' mt-2 w-fit px-2 text-center text-lg text-white'
+            lilita.className + ' mt-2 w-fit px-2 text-center text-lg text-white'
           }
         >
           SILVER

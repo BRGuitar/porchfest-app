@@ -9,9 +9,10 @@ const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 export default async function BandDetails({
   params,
 }: {
-  params: { band: string };
+  params: Promise<{ band: string }>;
 }) {
-  const bandData = await fetchBandByPageLink(params.band);
+  const { band } = await params;
+  const bandData = await fetchBandByPageLink(band);
   const foundBand = bandData[0] != null;
 
   if (foundBand) {
@@ -61,7 +62,7 @@ export default async function BandDetails({
           <div
             className={
               bebas.className +
-              ' mx-4 mb-2 mt-4 flex flex-col items-start rounded-t-2xl bg-base-orange p-2 text-4xl'
+              ' mx-4 mt-4 mb-2 flex flex-col items-start rounded-t-2xl bg-base-orange p-2 text-4xl'
             }
           >
             <h4 className='w-full text-center text-white'>Band Not Found</h4>

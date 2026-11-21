@@ -20,7 +20,7 @@ export default async function Schedule() {
         </div>
         <div className='m-2 w-5/6 rounded-3xl'>
           <div className='flex flex-col items-center text-6xl'>
-            <table className='w-full table-fixed border-separate border-spacing-x-0 border-spacing-y-8 rounded-t-xl bg-white bg-opacity-90 px-4 pb-4'>
+            <table className='w-full table-fixed border-separate border-spacing-x-0 border-spacing-y-8 rounded-t-xl bg-white/90 px-4 pb-4'>
               <tbody>
                 <tr className='text-xl text-black'>
                   <td className='p-1'>Set Start Time</td>

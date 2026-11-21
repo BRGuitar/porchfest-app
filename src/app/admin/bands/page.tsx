@@ -1,7 +1,7 @@
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
 import AddBandToBandListForm from '@/app/ui/AddBandToBandList';
-import { deleteFromBandList, fetchBandById, fetchBands } from '@/lib/data';
+import { deleteFromBandList, fetchBands } from '@/lib/data';
 import DeleteButton from '@/app/ui/DeleteButton';
 import { redirect } from 'next/navigation';
 import '../.././globals.css';

@@ -7,14 +7,14 @@ import posterImg from '../../../public/2026_Poster.png';
 export default function Banner() {
   const linkStyle = () =>
     clsx(
-      'flex h-fit flex-col rounded-sm border-4 lg:border-8 border-white p-2 text-white hover:border-white hover:bg-dark-blue hover:text-white hover:scale-105'
+      'flex h-fit flex-col rounded-xs border-4 lg:border-8 border-white p-2 text-white hover:border-white hover:bg-dark-blue hover:text-white hover:scale-105'
     );
   return (
-    <div className='flex flex-col bg-base-orange '>
+    <div className='flex flex-col bg-base-orange'>
       <div className='flex flex-row justify-center px-8 py-16'>
         <Link href='/home/about' className={linkStyle()}>
           <Image
-            className='rounded-sm border-2 border-white'
+            className='rounded-xs border-2 border-white'
             alt='Freight Street Band'
             src='/freightstreet.jpeg'
             height={200}
@@ -28,7 +28,7 @@ export default function Banner() {
           className={'ml-6 lg:ml-10 xl:ml-16 ' + linkStyle()}
         >
           <Image
-            className='rounded-sm border-2 border-white'
+            className='rounded-xs border-2 border-white'
             alt='2026 Porchfest Map Thumbnail'
             src='/PorchfestMap_Small.png'
             height={200}
@@ -42,7 +42,7 @@ export default function Banner() {
           className={'mx-6 lg:mx-10 xl:mx-16 ' + linkStyle()}
         >
           <Image
-            className='rounded-sm border-2 border-white'
+            className='rounded-xs border-2 border-white'
             alt='2024 Porchfest Crowd'
             src='/lineup.png'
             height={200}
@@ -53,7 +53,7 @@ export default function Banner() {
         </Link>
         <Link href={posterImg.src} target='_blank' className={linkStyle()}>
           <Image
-            className='rounded-sm border-2 border-white'
+            className='rounded-xs border-2 border-white'
             alt='2026 Porchfest Poster'
             src='/2026_Poster_Preview.png'
             height={200}

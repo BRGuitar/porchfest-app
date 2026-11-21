@@ -1,36 +1,25 @@
-import { sql } from '@vercel/postgres';
+import 'server-only';
+import { connection } from 'next/server';
+import { sql } from './db';
 import { Band, Performance } from './definitions';
-import { unstable_noStore as noStore } from 'next/cache';
-import { start } from 'repl';
+
+// Public pages read live data on every request so admin edits show up
+// immediately. `connection()` opts the calling route out of static rendering.
 
 export async function fetchSchedule() {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+  await connection();
   try {
-    console.log('Fetching Schedule data...');
-
-    const data =
-      await sql<Performance>`SELECT * FROM schedule ORDER BY starttime ASC`;
-
-    return data.rows;
+    return (await sql`SELECT * FROM schedule ORDER BY starttime ASC`) as Performance[];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Schedule data.');
   }
 }
 
-export async function fetchPerformanceById(performanceId) {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+export async function fetchPerformanceById(performanceId: string) {
+  await connection();
   try {
-    console.log('Fetching Performance from Schedule...');
-
-    const data =
-      await sql<Performance>`SELECT * FROM schedule WHERE id = ${performanceId}`;
-
-    return data.rows;
+    return (await sql`SELECT * FROM schedule WHERE id = ${performanceId}`) as Performance[];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Schedule data.');
@@ -38,74 +27,41 @@ export async function fetchPerformanceById(performanceId) {
 }
 
 export async function fetchBands() {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+  await connection();
   try {
-    console.log('Fetching Band data...');
-
-    const data = await sql<Band>`SELECT * FROM bands ORDER BY name ASC`;
-
-    return data.rows;
-  } catch (error) {
-    console.error('Database Error:', error);
-    throw new Error('Failed to fetch Schedule data.');
-  }
-}
-
-export async function fetchBandById(bandId) {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
-  try {
-    console.log('Fetching Band...');
-
-    const data = await sql<Band>`SELECT * FROM bands WHERE id = ${bandId}`;
-
-    return data.rows;
+    return (await sql`SELECT * FROM bands ORDER BY name ASC`) as Band[];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Band data.');
   }
 }
 
-export async function fetchBandByPageLink(bandPageLink) {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+export async function fetchBandById(bandId: string) {
+  await connection();
   try {
-    console.log('Fetching Band...');
-
-    const data =
-      await sql<Band>`SELECT * FROM bands WHERE pagelink = ${bandPageLink}`;
-
-    return data.rows;
+    return (await sql`SELECT * FROM bands WHERE id = ${bandId}`) as Band[];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Band data.');
   }
 }
 
-export async function fetchPageLink(bandName) {
-  // Add noStore() here to prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
-  noStore();
+export async function fetchBandByPageLink(bandPageLink: string) {
+  await connection();
   try {
-    console.log('Fetching Band Page Link...');
-
-    const data =
-      await sql<Band>`SELECT pagelink FROM bands WHERE name = ${bandName}`;
-
-    return data.rows;
+    return (await sql`SELECT * FROM bands WHERE pagelink = ${bandPageLink}`) as Band[];
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch Band data.');
   }
 }
 
-export async function addToSchedule(band, starttime, endtime, location) {
-  'use server';
-
+export async function addToSchedule(
+  band: string,
+  starttime: string,
+  endtime: string,
+  location: string
+) {
   try {
     await sql`
     INSERT INTO schedule (band, starttime, endtime, location)
@@ -116,14 +72,11 @@ export async function addToSchedule(band, starttime, endtime, location) {
   }
 }
 
-export async function deleteFromSchedule(id) {
-  'use server';
-
+export async function deleteFromSchedule(id: string) {
   try {
-    const row = await sql`
-    DELETE FROM schedule WHERE Id = ${id} RETURNING *;`;
-
-    return row.rows[0].band;
+    const rows =
+      await sql`DELETE FROM schedule WHERE id = ${id} RETURNING band`;
+    return rows[0]?.band as string | undefined;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to Delete from Schedule.');
@@ -131,14 +84,12 @@ export async function deleteFromSchedule(id) {
 }
 
 export async function addToBandList(
-  bandName,
-  imgLink,
-  pageLink,
-  bio1,
+  bandName: string,
+  imgLink: string,
+  pageLink: string,
+  bio1: string,
   bio2 = ''
 ) {
-  'use server';
-
   try {
     await sql`
     INSERT INTO bands (name, imglink, pagelink, bio1, bio2)
@@ -148,54 +99,50 @@ export async function addToBandList(
     throw new Error('Failed to add to Band List.');
   }
 
-  updateSchedulePageLinks(bandName, pageLink);
+  await updateSchedulePageLinks(bandName, pageLink);
 }
 
-export async function deleteFromBandList(id) {
-  'use server';
-
+export async function deleteFromBandList(id: string) {
   try {
-    const row = await sql`
-    DELETE FROM bands WHERE Id = ${id} RETURNING *;`;
-
-    return row.rows[0].name;
+    const rows = await sql`DELETE FROM bands WHERE id = ${id} RETURNING name`;
+    return rows[0]?.name as string | undefined;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to Delete from Schedule.');
+    throw new Error('Failed to Delete from Band List.');
   }
 }
 
 export async function updateBandFromBandList(
-  id,
-  bandName,
-  imgLink,
-  pageLink,
-  bio
+  id: string,
+  bandName: string,
+  imgLink: string,
+  pageLink: string,
+  bio: string
 ) {
   try {
     await sql`
-    UPDATE bands 
-    SET name = ${bandName}, imglink = ${imgLink}, pagelink = ${pageLink}, bio1 = ${bio} 
+    UPDATE bands
+    SET name = ${bandName}, imglink = ${imgLink}, pagelink = ${pageLink}, bio1 = ${bio}
     WHERE id = ${id}`;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to Update Band from Band List.');
   }
 
-  updateSchedulePageLinks(bandName, pageLink);
+  await updateSchedulePageLinks(bandName, pageLink);
 }
 
 export async function updatePerformanceFromSchedule(
-  id,
-  bandName,
-  starttime,
-  endtime,
-  location
+  id: string,
+  bandName: string,
+  starttime: string,
+  endtime: string,
+  location: string
 ) {
   try {
     await sql`
-    UPDATE schedule 
-    SET band = ${bandName}, starttime = ${starttime}, endtime = ${endtime}, location = ${location} 
+    UPDATE schedule
+    SET band = ${bandName}, starttime = ${starttime}, endtime = ${endtime}, location = ${location}
     WHERE id = ${id}`;
   } catch (error) {
     console.error('Database Error:', error);
@@ -203,14 +150,8 @@ export async function updatePerformanceFromSchedule(
   }
 }
 
-async function updateSchedulePageLinks(bandName, pageLink) {
-  const data =
-    await sql<Performance>`SELECT * FROM schedule WHERE band = ${bandName}`;
-
-  if (data.rowCount > 0) {
-    await sql`UPDATE schedule SET pagelink = ${pageLink} WHERE band = ${bandName}`;
-    console.log('Updated Schedule page Link for ' + bandName);
-  } else {
-    console.log('Found no corresponding Band on the Schedule');
-  }
+// schedule.band is matched to bands.name by string; keep the denormalized
+// schedule.pagelink in sync when a band is added or edited.
+async function updateSchedulePageLinks(bandName: string, pageLink: string) {
+  await sql`UPDATE schedule SET pagelink = ${pageLink} WHERE band = ${bandName}`;
 }

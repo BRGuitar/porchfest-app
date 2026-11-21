@@ -10,8 +10,14 @@ async function create(formData: FormData) {
   const pageLink = formData.get('PageLink');
   const bio = formData.get('Bio');
 
-  if (bandName && imgLink && pageLink && bio) {
-    await updateBandFromBandList(bandId, bandName, imgLink, pageLink, bio);
+  if (bandId && bandName && imgLink && pageLink && bio) {
+    await updateBandFromBandList(
+      bandId.toString(),
+      bandName.toString(),
+      imgLink.toString(),
+      pageLink.toString(),
+      bio.toString()
+    );
   }
   redirect(`/admin/bands`);
 }

@@ -1,5 +1,5 @@
 export type Performance = {
-  id: Number;
+  id: number;
   band: string;
   starttime: Date;
   endtime: Date;
@@ -8,7 +8,7 @@ export type Performance = {
 };
 
 export type Band = {
-  id: Number;
+  id: number;
   name: string;
   imglink: string;
   pagelink: string;

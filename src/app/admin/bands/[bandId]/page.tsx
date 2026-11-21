@@ -9,9 +9,10 @@ const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
 export default async function EditBand({
   params,
 }: {
-  params: { bandId: string };
+  params: Promise<{ bandId: string }>;
 }) {
-  const bandDetails = await fetchBandById(params.bandId);
+  const { bandId } = await params;
+  const bandDetails = await fetchBandById(bandId);
   let foundBand: Band | undefined = undefined;
   if (bandDetails.length > 0) {
     foundBand = bandDetails[0];
@@ -25,7 +26,7 @@ export default async function EditBand({
         Back to Bands
       </Link>
       <UpdateBandForm
-        id={params.bandId}
+        id={bandId}
         bandName={foundBand?.name}
         imgLink={foundBand?.imglink}
         pageLink={foundBand?.pagelink}

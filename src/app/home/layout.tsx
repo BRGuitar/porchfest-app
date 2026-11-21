@@ -1,12 +1,8 @@
-import { Bebas_Neue, Lilita_One } from 'next/font/google';
 import '../globals.css';
 import Image from 'next/image';
 import NavBar from '@/app/ui/NavBar';
 import Link from 'next/link';
 import SponsorTiles from '../ui/SponsorTiles';
-
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
-const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -26,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 className='flex flex-col items-center hover:opacity-80'
               >
                 <Image
-                  className='mb-2 mt-4 bg-white'
+                  className='mt-4 mb-2 bg-white'
                   alt='Facebook Logo'
                   src='/facebook.jpeg'
                   height={60}

@@ -1,9 +1,4 @@
-import { Montserrat, Lilita_One, Bebas_Neue } from 'next/font/google';
 import { fetchSchedule } from '@/lib/data';
-
-const montserrat = Montserrat({ weight: '500', subsets: ['latin'] });
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] });
-const lilita = Lilita_One({ weight: '400', subsets: ['latin'] });
 
 export default async function About() {
   const bandsOnSchedule = await fetchSchedule();

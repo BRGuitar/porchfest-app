@@ -21,11 +21,11 @@ export default function Info() {
         className={montserrat.className + ' flex flex-col items-center text-lg'}
       >
         <div className='rounded-xl'>
-          <div className='mb-4 flex flex-col items-center bg-white bg-opacity-90 pb-4 pt-4 text-white'>
+          <div className='mb-4 flex flex-col items-center bg-white/90 pt-4 pb-4 text-white'>
             <div
               className={
                 lilita.className +
-                ' mb-2 mt-8 w-5/6 border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+                ' mt-8 mb-2 w-5/6 border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
               }
             >
               ORIGINS
@@ -41,7 +41,7 @@ export default function Info() {
             <div
               className={
                 lilita.className +
-                ' mb-2 mt-8 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+                ' mt-8 mb-2 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
               }
             >
               HISTORY
@@ -55,7 +55,7 @@ export default function Info() {
               <a
                 href='https://www.porchfest.org/porchfests-elsewhere/'
                 target='_blank'
-                className=' underline'
+                className='underline'
               >
                 visit site
               </a>
@@ -64,7 +64,7 @@ export default function Info() {
             <div
               className={
                 lilita.className +
-                ' mb-2 mt-8 w-5/6 border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+                ' mt-8 mb-2 w-5/6 border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
               }
             >
               WHY
@@ -81,7 +81,7 @@ export default function Info() {
             <div
               className={
                 lilita.className +
-                ' mb-2 mt-8 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+                ' mt-8 mb-2 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
               }
             >
               THANK YOU
@@ -109,25 +109,27 @@ export default function Info() {
             <div
               className={
                 lilita.className +
-                ' mb-2 mt-8 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
+                ' mt-8 mb-2 w-5/6 rounded-t-lg border-b-2 border-b-dark-blue text-center text-3xl text-dark-blue'
               }
             >
               BAND APPLICATION
             </div>
 
             <div className='w-5/6 rounded-lg p-2 pt-0 text-center text-black'>
-              Want to perform at BG Porchfest? 
-              We are looking for a diverse lineup of solo acoustic acts, duos, and full bands across all genres 
-              to play for tips on neighborhood porches. If you would like to be considered for this year’s schedule, 
-              please fill out our online&nbsp;
+              Want to perform at BG Porchfest? We are looking for a diverse
+              lineup of solo acoustic acts, duos, and full bands across all
+              genres to play for tips on neighborhood porches. If you would like
+              to be considered for this year’s schedule, please fill out our
+              online&nbsp;
               <a
                 href='https://docs.google.com/forms/d/e/1FAIpQLSeumjFigLLXeVeLPkxTlj-It2ggyuXrvk6IXQInXRjve0YTnQ/viewform?pli=1'
                 target='_blank'
-                className=' underline'
+                className='underline'
               >
                 Band Application Form
-              </a>. Space is limited, and we will follow up with 
-              selected performers once the lineup is finalized.
+              </a>
+              . Space is limited, and we will follow up with selected performers
+              once the lineup is finalized.
             </div>
 
             <div className='w-5/6 rounded-lg p-2 pt-8 text-center text-black'>
