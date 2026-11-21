@@ -4,7 +4,7 @@ import Banner from '../ui/Banner';
 
 export default function Home() {
   return (
-    <div>
+    <div className='w-full'>
       <div
         id='home-banner'
         className='flex h-80 w-full flex-row justify-center bg-white'

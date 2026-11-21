@@ -11,6 +11,17 @@
   --color-base-blue: #137795;
   --color-light-blue: #7fcdee;
   --color-base-orange: #f67a2d;
+
+  /* Photo strip on the home page: slides left by one copy of the list. */
+  --animate-marquee: marquee 80s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 /*
